@@ -1,0 +1,229 @@
+
+
+.main {
+    height: 100%;
+    width: 100%;
+}
+.pag7 {
+
+    align-items: center;
+    text-align: center;
+    padding: 15%;
+
+}
+
+.card1{
+    width: 400px;
+    height: 450px;
+    background-color: rgba(255, 255, 255, 0.15);
+    text-align: center;
+    align-items: center;
+    border-radius: 8px;
+    padding: 0%;
+    margin-bottom: 15px;
+}
+.divcard{
+    width: 400px;
+    height: 100px;
+    background-color: rgba(116, 116, 116, 0.15);
+    margin-bottom: 15px;
+}
+
+.card1 img{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin: 0%;
+}
+.txt21{
+    color: #343f4b;
+    margin-top: 2%;
+    margin-left: 5%;
+}
+.cardlogo {
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border-radius: 30px;
+}
+.His21 {
+    background-color: white;
+    
+}
+.cardtxt {
+    color: black;
+    text-align: justify;
+    font-size: 10px;
+    margin-top: 15px;
+}
+.h1card {
+    color: black;
+    text-align: left;
+    margin-left: 0%;
+    font-size: 20px;
+}
+.cuad2 {
+    height: 8px;
+    width: 80px;
+    background-color: #c25be9;
+}
+h6 {
+    font-size: 30px;
+}
+.form  {
+    color: #000000;
+}
+.pag19 {
+
+    align-items: center;
+    text-align: left;
+    width: 1200px;
+    height: 700px;
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.request {
+    text-align: left;
+    background-color: white;
+    margin-right: 15%;
+    margin-left: 5%;
+    padding: 2%;
+    
+}
+
+
+.transparente {
+    align-items: center;
+    text-align: center;
+    padding: 0%;
+    height: 400px;
+    background-color: rgba(255, 255, 255,.25);
+    width: 340px;
+    height: 400px;
+}
+
+.endtext {
+    text-align: center;
+    color: white;
+    font-size: 10px;
+}
+.div1 { 
+    background-color: #343f4b;
+    margin: 0%;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+}
+.div2 { 
+    background-image: url(https://thumbs.dreamstime.com/b/wireframe-landscape-wire-wireframe-terrain-lines-landscape-design-wireframe-landscape-wire-wireframe-terrain-lines-landscape-146299852.jpg);
+    background-position: 0% 75%;
+}
+.div3{
+    background-color: rgba(0, 0, 0, 0.85);
+    margin: 0%;
+    height: auto;
+    width: auto;
+    overflow: hidden;
+    padding-top: 2%;
+    padding-left: 2%;
+}
+ion-icon {
+    color: white;
+    font-size: 25px;
+    margin: 5px;
+    margin-left: 15px;
+}
+.icon2{
+    color: white;
+    font-size: 25px;
+    margin: 5px;
+    margin-left: 15px;
+}
+.btnHome{
+    background-color: #c25be9;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 15px;
+    margin-bottom: 50px;
+    border-radius: 8px;
+}
+.btnSubmit {
+    background-color: #c25be9;
+    border: none;
+    color: white;
+    padding: 5px 12px;
+    text-align: left;
+    text-decoration: none;
+    font-size: 16px;
+    margin-top: 20px;
+    border-radius: 8px;
+}
+.textrequest1 {
+    padding: 1px 300px;
+}
+.textrequest2 {
+    padding: 60px 300px;
+}
+
+.logos {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+button {
+    background-color: #c25be9;
+    border: none;
+    color: white;
+    padding: 8px 12px;
+    text-align: left;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 15px;
+    border-radius: 8px;
+    
+}
+.img7 {
+    margin: 0%;
+}
+img {
+    margin: 25px;
+}
+h1 {
+    color: aliceblue;
+    margin-left: 15px;
+}
+h2 {
+    color: aliceblue;
+    margin-left: 15px;
+    
+}
+
+h3 { 
+    color: aliceblue;
+    margin-left: 15px;
+    margin-bottom: 20px;
+}
+h4 {
+    color: aliceblue;
+    font-size: 16px;
+}
+h5 {
+    color: aliceblue;
+    margin-left: 15px;
+    margin-bottom: 20px;
+    font-size: medium;
+}
+p {
+    font-size: 12px;
+    color: white;
+    text-align: left;
+    
+}
+.header {
+    margin-top: 20px;
+}
