@@ -9,7 +9,7 @@ const RankingPeriferic = () => {
     const container = {
         textAlign: "left",
         alignItems: "left",
-        marginLeft: "30px"
+        marginLeft: "50px"
     }
     const containerTitulo = {
         marginLeft: "0px",
@@ -47,13 +47,16 @@ const RankingPeriferic = () => {
         marginTop: "15px",
         width: "75%",
         textAlign: "left",
-        alignItems: "center"
+        alignItems: "center",
+        fontSize: "x-large"
     }
     const precio = {
         textAlign: "left",
         marginTop: "15px",
-        width: "15%"
+        width: "15%",
+        fontSize: "x-large"
     }
+
     return (
         <Container style={container}>
             <Row style={containerTitulo}>

@@ -11,7 +11,7 @@ import pantalla from "../../assets/screen.png"
 const CommonQuestions = () => {
     const containerTitulo = {
         marginTop: "30px",
-        paddingLeft: "35px",
+        paddingLeft: "50px",
         paddingTop: "20px",
         textAlign: "left",
         color: "white",
@@ -21,7 +21,7 @@ const CommonQuestions = () => {
 
     const containerOpciones = {
         marginTop: "40px",
-        marginLeft: "35px"
+        marginLeft: "140px"
     }
     const filaLista = {
         textAlign: "left",
@@ -42,7 +42,7 @@ const CommonQuestions = () => {
     }
     const containerStyle = {
         width: "80%",
-        marginLeft: "50px",
+        marginLeft: "0px",
     }
     return (
         <Container style={containerStyle}>

@@ -8,7 +8,7 @@ import measure from "../../assets/measure.png"
 const SupportGuide = () => {
     const containerTitulo = {
         marginTop: "30px",
-        paddingLeft: "35px",
+        paddingLeft: "50px",
         paddingTop: "20px",
         textAlign: "left",
         color: "white",
@@ -18,7 +18,7 @@ const SupportGuide = () => {
 
     const containerOpciones = {
         marginTop: "40px",
-        marginLeft: "35px"
+        marginLeft: "140px"
     }
     const filaLista = {
         textAlign: "left",
@@ -39,7 +39,7 @@ const SupportGuide = () => {
     }
     const containerStyle = {
         width: "80%",
-        marginLeft: "50px",
+        marginLeft: "0px",
     }
 
 const title = {
