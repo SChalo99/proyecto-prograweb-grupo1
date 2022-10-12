@@ -38,7 +38,9 @@ const Opciones = () => {
     return (
         <Container>
             <Row style={containerTitulo}>
-                <h1 style={title}>Support Guides</h1>
+                <Col>
+                    <h1 style={title}>Support Guides</h1>
+                </Col>
             </Row>
             <Row style={containerOpciones}>
                     <Col style={opciones}>
