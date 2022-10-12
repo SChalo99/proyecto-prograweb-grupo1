@@ -6,12 +6,19 @@ import mousepad from "../../assets/mousepad.png"
 import mousepadXL from "../../assets/mousepadXL.png"
 
 const RankingPeriferic = () => {
+    const container = {
+        textAlign: "left",
+        alignItems: "left",
+        marginLeft: "30px"
+    }
     const containerTitulo = {
-        marginLeft: "-255px",
-        marginTop: "30px"
+        marginLeft: "0px",
+        marginTop: "30px",
+        textAlign: "left",
+        color: "white"
     }
     const containerOpciones = {
-        marginLeft: "-100px",
+        marginLeft: "65px",
         marginTop: "20px"
     }
     const mystyle = {
@@ -37,18 +44,20 @@ const RankingPeriferic = () => {
     const nombre = {
         textAlign: "left",
         marginRight: "20px",
-        width: "75%"
+        marginTop: "15px",
+        width: "75%",
+        textAlign: "left",
+        alignItems: "center"
     }
     const precio = {
         textAlign: "left",
+        marginTop: "15px",
         width: "15%"
     }
     return (
-        <Container>
+        <Container style={container}>
             <Row style={containerTitulo}>
-                <div class="contenedor_titulo">
                     <h1>Ranking best sellers periferics</h1>
-                </div>
             </Row>
             <Row style={containerOpciones}>
                 <Container style={containerStyle}>

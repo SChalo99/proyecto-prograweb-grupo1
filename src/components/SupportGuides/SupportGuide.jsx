@@ -10,39 +10,44 @@ const SupportGuide = () => {
         marginTop: "30px",
         paddingLeft: "35px",
         paddingTop: "20px",
+        textAlign: "left",
         color: "white",
         fontFamily: "Arial, Helvetica, sans-serif",
         fontSize: "300%"
-}
+    }
+
+    const containerOpciones = {
+        marginTop: "40px",
+        marginLeft: "35px"
+    }
+    const filaLista = {
+        textAlign: "left",
+        display: "flex",
+        alignItems: "center",
+        width: "75%",
+        paddingLeft: "30px",
+        fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "x-large"
+    }
+
+    const p = {
+        margin: "15px"
+    }
+    const icons_tabla = {
+        height: "30px",
+        width: "30px"
+    }
+    const containerStyle = {
+        width: "80%",
+        marginLeft: "50px",
+    }
 
 const title = {
     float: "left",
 }
 
-const containerOpciones = {
-    marginTop: "40px"
-}
-const filaLista = {
-    textAlign: "left",
-    display: "flex",
-    alignItems: "center",
-    width: "75%",
-    paddingLeft: "30px",
-    fontFamily: "Arial, Helvetica, sans-serif",
-    fontSize: "x-large"
-}
-
-const p = {
-    margin: "15px"
-}
-const icons_tabla = {
-    height: "30px",
-    width: "30px"
-}
-
-
 return (
-    <Container>
+    <Container style={containerStyle}>
         <Row style={containerTitulo}>
             <Col>
                 <h1 style={title}>Support Guides</h1>    

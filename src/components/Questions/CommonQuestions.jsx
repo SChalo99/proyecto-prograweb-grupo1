@@ -13,16 +13,15 @@ const CommonQuestions = () => {
         marginTop: "30px",
         paddingLeft: "35px",
         paddingTop: "20px",
+        textAlign: "left",
         color: "white",
         fontFamily: "Arial, Helvetica, sans-serif",
         fontSize: "300%"
     }
-    const title = {
-        float: "left",
-    }
 
     const containerOpciones = {
-        marginTop: "40px"
+        marginTop: "40px",
+        marginLeft: "35px"
     }
     const filaLista = {
         textAlign: "left",
@@ -41,8 +40,12 @@ const CommonQuestions = () => {
         height: "30px",
         width: "30px"
     }
+    const containerStyle = {
+        width: "80%",
+        marginLeft: "50px",
+    }
     return (
-        <Container>
+        <Container style={containerStyle}>
             <Row style={containerTitulo}>
                 <h1 class="titulo">Common Questions</h1>
             </Row>
