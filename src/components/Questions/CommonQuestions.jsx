@@ -10,11 +10,18 @@ import pantalla from "../../assets/screen.png"
 
 const CommonQuestions = () => {
     const containerTitulo = {
-        marginLeft: "-320px",
-        marginTop: "30px"
+        marginTop: "30px",
+        paddingLeft: "35px",
+        paddingTop: "20px",
+        color: "white",
+        fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "300%"
     }
+    const title = {
+        float: "left",
+    }
+
     const containerOpciones = {
-        marginLeft: "-100px",
         marginTop: "40px"
     }
     const filaLista = {
@@ -22,44 +29,52 @@ const CommonQuestions = () => {
         display: "flex",
         alignItems: "center",
         width: "75%",
-        paddingLeft: "30px"
+        paddingLeft: "30px",
+        fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "x-large"
+    }
+
+    const p = {
+        margin: "15px"
+    }
+    const icons_tabla = {
+        height: "30px",
+        width: "30px"
     }
     return (
         <Container>
             <Row style={containerTitulo}>
-                <div class="contenedor_titulo">
-                    <h1 class="titulo">Common Questions</h1>
-                </div>
+                <h1 class="titulo">Common Questions</h1>
             </Row>
             <Row style={containerOpciones}>
                 <ListGroup>
                     <ListGroup.Item style={filaLista}>
-                        <img src={refund} class="icons_tabla" alt=""></img>
-                        <p>Refund Policy</p>
+                        <img src={refund} style={icons_tabla} alt=""></img>
+                        <p style={p}>Refund Policy</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={cancel} class="icons_tabla" alt=""></img>
-                        <p>Cancellation Policy</p>
+                        <img src={cancel} style={icons_tabla} alt=""></img>
+                        <p style={p}>Cancellation Policy</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={warranty} class="icons_tabla" alt=""></img>
-                        <p>Warranty Services</p>
+                        <img src={warranty} style={icons_tabla} alt=""></img>
+                        <p style={p}>Warranty Services</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={cash} class="icons_tabla" alt=""></img>
-                        <p>Financing</p>
+                        <img src={cash} style={icons_tabla} alt=""></img>
+                        <p style={p}>Financing</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={paquete} class="icons_tabla" alt=""></img>
-                        <p>How long will it take for my PC to arrive</p>
+                        <img src={paquete} style={icons_tabla} alt=""></img>
+                        <p style={p}>How long will it take for my PC to arrive</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={tierra} class="icons_tabla" alt=""></img>
-                        <p>Do you ship internationally?</p>
+                        <img src={tierra} style={icons_tabla} alt=""></img>
+                        <p style={p}>Do you ship internationally?</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={pantalla} class="icons_tabla" alt=""></img>
-                        <p>Do you setup and isntall Windows, drivers, etc?</p>
+                        <img src={pantalla} style={icons_tabla} alt=""></img>
+                        <p style={p}>Do you setup and isntall Windows, drivers, etc?</p>
                     </ListGroup.Item>
                 </ListGroup>
             </Row>
