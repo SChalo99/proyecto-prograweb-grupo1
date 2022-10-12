@@ -1,5 +1,4 @@
 import './App.css';
-import { Container, Row } from 'react-bootstrap';
 import OptimizePage from './components/Pages';
 import SideBar from './components/SideMenu/SideBar';
 import ListProduct from './components/List';
@@ -21,7 +20,7 @@ function App() {
           <Route path="support" element={<SupportGuide />} />
           <Route path="ranking" element={<RankingPeriferic />} />
           <Route path="optimized" element={<OptimizePage />} />
-          <Route path="*" />
+          <Route path="*" element={<SideBar />}/>
         </Routes>
       </BrowserRouter>
     </div>
