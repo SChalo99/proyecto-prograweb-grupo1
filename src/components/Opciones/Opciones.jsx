@@ -6,7 +6,7 @@ import FAQ from "../../assets/FAQ.png"
 import { Container, Row, Col } from "react-bootstrap";
 const Opciones = () => {
     const containerTitulo = {
-        marginLeft: "70px",
+        marginLeft: "0px",
         marginTop: "30px",
         padding: "30px"
     }
@@ -15,9 +15,11 @@ const Opciones = () => {
         color: "white"
     }
     const containerOpciones = {
-       margin: "auto",
-       gap: "40px",
-       color: "white"
+        margin: "auto",
+        marginTop: "50px",
+        gap: "40px",
+        color: "white",
+        width: "1000px"
     }
     const img = {
         height: "100px",
@@ -27,19 +29,22 @@ const Opciones = () => {
 
     const opciones = {
     height: "280px",
-    width: "280px",
+    width: "20px",
     padding: "40px",
     backgroundColor: "rgb(73, 70, 70)",
     textAlign: "center",
     alignItems: "center",
     margin: "0px auto",
     }
-
+    const containerStyle = {
+        width: "80%",
+        marginLeft: "0px",
+    }
     return (
-        <Container>
+        <Container >
             <Row style={containerTitulo}>
                 <Col>
-                    <h1 style={title}>Support Guides</h1>
+                    <h1 style={title}>Support Hub</h1>
                 </Col>
             </Row>
             <Row style={containerOpciones}>
