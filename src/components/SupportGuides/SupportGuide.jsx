@@ -31,27 +31,27 @@ const SupportGuide = () => {
             <Row style={containerOpciones}>
                 <ListGroup>
                     <ListGroup.Item style={filaLista}>
-                        <img src={laptop} class="icons_tabla"></img>
+                        <img src={laptop} class="icons_tabla" alt=""></img>
                         <p>Build Redux Quick Start Guide</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={laptop} class="icons_tabla"></img>
+                        <img src={laptop} class="icons_tabla" alt=""></img>
                         <p>System Overview</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={settings} class="icons_tabla"></img>
+                        <img src={settings} class="icons_tabla" alt=""></img>
                         <p>Troubleshooting - Display</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={reset} class="icons_tabla"></img>
+                        <img src={reset} class="icons_tabla" alt=""></img>
                         <p>Reaseting Guide - Memory</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={reset} class="icons_tabla"></img>
+                        <img src={reset} class="icons_tabla" alt=""></img>
                         <p>Reaseting Guide - Graphics Card</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={measure} class="icons_tabla"></img>
+                        <img src={measure} class="icons_tabla" alt=""></img>
                         <p>Realignment Guide - Rear I/O</p>
                     </ListGroup.Item>
                 </ListGroup>

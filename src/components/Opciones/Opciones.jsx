@@ -22,15 +22,15 @@ const Opciones = () => {
             <Row style={containerOpciones}>
                 <div class="contenedor-opciones">
                     <div class="opciones">
-                        <img src={book} class="icons"></img>
+                        <img src={book} class="icons" alt=""></img>
                         <h2>Guides</h2>
                     </div>
                     <div class="opciones">
-                        <img src={FAQ} class="icons"></img>
+                        <img src={FAQ} class="icons" alt=""></img>
                         <h2>FAQ</h2>
                     </div>
                     <div class="opciones">
-                        <img src={ticket} class="icons"></img>
+                        <img src={ticket} class="icons" alt=""></img>
                         <h2>Submit Ticket</h2>
                     </div>
                 </div>

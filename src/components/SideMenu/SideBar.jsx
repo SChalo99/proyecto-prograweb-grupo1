@@ -2,7 +2,7 @@ import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
-import {BackButton} from '../Buttons';
+import CommonQuestions from '../Questions';
 import ListProduct from '../List';
 
 
@@ -26,7 +26,7 @@ const SideBar = () => {
             <Col sm={8}>
               <Tab.Content>
                 <Tab.Pane eventKey="#link1">
-                    <BackButton />
+                    <CommonQuestions />
                 </Tab.Pane>
                 <Tab.Pane eventKey="#link2">
                     <ListProduct />

@@ -29,7 +29,6 @@ const RankingPeriferic = () => {
         marginLeft: "-50px"
     }
     const imagen = {
-        textAlign: "left",
         display: "flex",
         width: "15%",
         textAlign: "center",

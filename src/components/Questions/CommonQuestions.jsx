@@ -34,31 +34,31 @@ const CommonQuestions = () => {
             <Row style={containerOpciones}>
                 <ListGroup>
                     <ListGroup.Item style={filaLista}>
-                        <img src={refund} class="icons_tabla"></img>
+                        <img src={refund} class="icons_tabla" alt=""></img>
                         <p>Refund Policy</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={cancel} class="icons_tabla"></img>
+                        <img src={cancel} class="icons_tabla" alt=""></img>
                         <p>Cancellation Policy</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={warranty} class="icons_tabla"></img>
+                        <img src={warranty} class="icons_tabla" alt=""></img>
                         <p>Warranty Services</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={cash} class="icons_tabla"></img>
+                        <img src={cash} class="icons_tabla" alt=""></img>
                         <p>Financing</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={paquete} class="icons_tabla"></img>
+                        <img src={paquete} class="icons_tabla" alt=""></img>
                         <p>How long will it take for my PC to arrive</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={tierra} class="icons_tabla"></img>
+                        <img src={tierra} class="icons_tabla" alt=""></img>
                         <p>Do you ship internationally?</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
-                        <img src={pantalla} class="icons_tabla"></img>
+                        <img src={pantalla} class="icons_tabla" alt=""></img>
                         <p>Do you setup and isntall Windows, drivers, etc?</p>
                     </ListGroup.Item>
                 </ListGroup>

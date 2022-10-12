@@ -1,25 +1,31 @@
-import logo from './logo.svg';
 import './App.css';
-import { Container } from 'react-bootstrap';
-import Header from './components/layout/Header/Header';
+import { Container, Row } from 'react-bootstrap';
+import OptimizePage from './components/Pages';
+import SideBar from './components/SideMenu/SideBar'; 
+import ListProduct from './components/List';
+import CommonQuestions from './components/Questions';
+import SupportGuide from './components/SupportGuides';
+import RankingPeriferic from './components/Ranking' 
+import Opciones from './components/Opciones';
+import {BrowserRouter, Routes, Route} from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
       <Container>
         <Row>
-          <Header />
-        </Row>
-        <Row>
           <BrowserRouter>
             <Routes>
-              <Route path="/" />
-              <Route path="" />
-              <Route path="" />
+              <Route path="/" element={SideBar} />
+              <Route path="productos" element={ListProduct} />
+              <Route path="preguntas" element={CommonQuestions} />
+              <Route path="opciones" element={Opciones} />
+              <Route path="support" element={SupportGuide} />
+              <Route path="ranking" element={RankingPeriferic} />
+              <Route path="optimized" element={OptimizePage}/>
               <Route path="*" />
             </Routes>
           </BrowserRouter>
-
         </Row>
       </Container>
     </div>
