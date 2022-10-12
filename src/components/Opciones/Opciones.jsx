@@ -3,37 +3,56 @@ import Badge from 'react-bootstrap/Badge';
 import book from "../../assets/book.png"
 import ticket from "../../assets/ticket.png"
 import FAQ from "../../assets/FAQ.png"
-import { Container, Row } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 const Opciones = () => {
     const containerTitulo = {
-        marginLeft: "-230px",
-        marginTop: "30px"
+        marginLeft: "70px",
+        marginTop: "30px",
+        padding: "30px"
+    }
+    const title = {
+        float: "left",
+        color: "white"
     }
     const containerOpciones = {
-       margin: "auto"
+       margin: "auto",
+       gap: "40px",
+       color: "white"
     }
+    const img = {
+        height: "100px",
+         width: "100px",
+        marginBottom: "35px"
+    }
+
+    const opciones = {
+    height: "280px",
+    width: "280px",
+    padding: "40px",
+    backgroundColor: "rgb(73, 70, 70)",
+    textAlign: "center",
+    alignItems: "center",
+    margin: "0px auto",
+    }
+
     return (
         <Container>
             <Row style={containerTitulo}>
-                <div class="contenedor_titulo">
-                    <h1 class="titulo">Support Guides</h1>
-                </div>
+                <h1 style={title}>Support Guides</h1>
             </Row>
             <Row style={containerOpciones}>
-                <div class="contenedor-opciones">
-                    <div class="opciones">
-                        <img src={book} class="icons" alt=""></img>
+                    <Col style={opciones}>
+                        <img src={book} style={img} alt=""></img>
                         <h2>Guides</h2>
-                    </div>
-                    <div class="opciones">
-                        <img src={FAQ} class="icons" alt=""></img>
+                    </Col>
+                    <Col style={opciones}>
+                        <img src={FAQ} style={img} alt=""></img>
                         <h2>FAQ</h2>
-                    </div>
-                    <div class="opciones">
-                        <img src={ticket} class="icons" alt=""></img>
+                    </Col> 
+                    <Col style={opciones}>
+                        <img src={ticket} style={img} alt=""></img>
                         <h2>Submit Ticket</h2>
-                    </div>
-                </div>
+                    </Col>
             </Row>
         </Container>
     )
