@@ -6,15 +6,15 @@ import mousepadXL from "../../assets/mousepadXL.png"
 import "./bestbuild.css"
 const BestBuilds = () => {
     const containerTitulo = {
-        marginLeft: "-255px",
-        marginTop: "30px"
+        marginTop: "30px",
+        textAlign: "left",
+        padding: "30px",
+        marginLeft: "70px"
     }
     return (
         <Container>
             <Row style={containerTitulo}>
-                <div class="contenedor_titulo">
-                    <h1>Ranking best sellers periferics</h1>
-                </div>
+                <h1>Ranking best sellers periferics</h1>
             </Row>
             <Row>
 

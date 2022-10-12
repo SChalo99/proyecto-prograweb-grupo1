@@ -7,6 +7,7 @@ import SupportGuide from './components/SupportGuides';
 import RankingPeriferic from './components/Ranking'
 import Opciones from './components/Opciones';
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import BestBuilds from './components/Best_Builds';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
           <Route path="support" element={<SupportGuide />} />
           <Route path="ranking" element={<RankingPeriferic />} />
           <Route path="optimized" element={<OptimizePage />} />
+          <Route path="bestbuild" element = {<BestBuilds />}/>
           <Route path="*" element={<SideBar />}/>
         </Routes>
       </BrowserRouter>

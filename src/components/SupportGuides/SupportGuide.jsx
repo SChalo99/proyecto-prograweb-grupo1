@@ -7,57 +7,77 @@ import settings from "../../assets/settings.png"
 import measure from "../../assets/measure.png"
 const SupportGuide = () => {
     const containerTitulo = {
-        marginLeft: "-320px",
-        marginTop: "30px"
-    }
-    const containerOpciones = {
-        marginLeft: "-100px",
-        marginTop: "40px"
-    }
-    const filaLista = {
-        textAlign: "left",
-        display: "flex",
-        alignItems: "center",
-        width: "75%",
-        paddingLeft: "30px"
-    }
-    return (
-        <Container>
-            <Row style={containerTitulo}>
-                <div class="contenedor_titulo">
-                    <h1 class="titulo">Support Guides</h1>
-                </div>
-            </Row>
-            <Row style={containerOpciones}>
-                <ListGroup>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={laptop} class="icons_tabla" alt=""></img>
-                        <p>Build Redux Quick Start Guide</p>
-                    </ListGroup.Item>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={laptop} class="icons_tabla" alt=""></img>
-                        <p>System Overview</p>
-                    </ListGroup.Item>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={settings} class="icons_tabla" alt=""></img>
-                        <p>Troubleshooting - Display</p>
-                    </ListGroup.Item>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={reset} class="icons_tabla" alt=""></img>
-                        <p>Reaseting Guide - Memory</p>
-                    </ListGroup.Item>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={reset} class="icons_tabla" alt=""></img>
-                        <p>Reaseting Guide - Graphics Card</p>
-                    </ListGroup.Item>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={measure} class="icons_tabla" alt=""></img>
-                        <p>Realignment Guide - Rear I/O</p>
-                    </ListGroup.Item>
-                </ListGroup>
-            </Row>
-        </Container>
-    )
+        marginTop: "30px",
+        paddingLeft: "35px",
+        paddingTop: "20px",
+        color: "white",
+        fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "300%"
+}
+
+const title = {
+    float: "left",
+}
+
+const containerOpciones = {
+    marginTop: "40px"
+}
+const filaLista = {
+    textAlign: "left",
+    display: "flex",
+    alignItems: "center",
+    width: "75%",
+    paddingLeft: "30px",
+    fontFamily: "Arial, Helvetica, sans-serif",
+    fontSize: "x-large"
+}
+
+const p = {
+    margin: "15px"
+}
+const icons_tabla = {
+    height: "30px",
+    width: "30px"
+}
+
+
+return (
+    <Container>
+        <Row style={containerTitulo}>
+            <Col>
+                <h1 style={title}>Support Guides</h1>    
+            </Col> 
+        </Row>
+        <Row style={containerOpciones}>
+            <ListGroup>
+                <ListGroup.Item style={filaLista}>
+                    <img src={laptop} style={icons_tabla} alt=""></img>
+                    <p style={p}>Build Redux Quick Start Guide</p>
+                </ListGroup.Item>
+                <ListGroup.Item style={filaLista}>
+                    <img src={laptop} style={icons_tabla} alt=""></img>
+                    <p style={p}>System Overview</p>
+                </ListGroup.Item>
+                <ListGroup.Item style={filaLista}>
+                    <img src={settings} style={icons_tabla} alt=""></img>
+                    <p style={p}>Troubleshooting - Display</p>
+                </ListGroup.Item>
+                <ListGroup.Item style={filaLista}>
+                    <img src={reset} style={icons_tabla} alt=""></img>
+                    <p style={p}>Reaseting Guide - Memory</p>
+                </ListGroup.Item>
+                <ListGroup.Item style={filaLista}>
+                    <img src={reset} style={icons_tabla} alt=""></img>
+                    <p style={p}>Reaseting Guide - Graphics Card</p>
+                </ListGroup.Item>
+                <ListGroup.Item style={filaLista}>
+                    <img src={measure} style={icons_tabla} alt=""></img>
+                    <p style={p}>Realignment Guide - Rear I/O</p>
+                </ListGroup.Item>
+            </ListGroup>
+        </Row>
+    </Container>
+)
 }
 
 export default SupportGuide
