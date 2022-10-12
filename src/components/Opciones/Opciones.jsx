@@ -17,9 +17,9 @@ const Opciones = () => {
     const containerOpciones = {
         margin: "auto",
         marginTop: "50px",
-        gap: "40px",
+        gap: "60px",
         color: "white",
-        width: "1000px"
+        width: "50%px"
     }
     const img = {
         height: "100px",
