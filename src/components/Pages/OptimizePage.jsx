@@ -7,8 +7,10 @@ import nvme from "../../assets/nvme.png"
 import cooler from "../../assets/cooler.png"
 import controller from "../../assets/controller.png"
 import Card from 'react-bootstrap/Card';
+import data from './data'
 
 const OptimizePage = () => {
+    //Styles
     const titleStyle = {
         color: "white",
         float: "left"
@@ -26,7 +28,7 @@ const OptimizePage = () => {
     }
 
     const subTitle = {
-        marginTop: "50px",
+        marginTop: "30px",
     }
 
     const mystyle = {
@@ -36,7 +38,8 @@ const OptimizePage = () => {
     };
 
     const borderBottom = {
-        borderBottom: "1px solid black"
+        borderBottom: "1px solid black",
+        height: "97px"
     }
 
     const card = {
@@ -52,6 +55,63 @@ const OptimizePage = () => {
         backgroundColor: "gray",
         color: "white"
     }
+    //Data
+
+    var productos = []
+    var parejas = []
+    for (var i = 0; i <= data.length; i++) {
+        if (parejas.length <= 1) {
+            parejas.push(data[i])
+        } else {
+            productos.push(parejas)
+            parejas = []
+            parejas.push(data[i])
+        }
+    }
+    console.log(data.length)
+    console.log(productos)
+    const products = productos.map(item => {
+        return (
+            <Row key={item[0].id}>
+                <Col >
+                    <Card.Body style={borderBottom}>
+                        <Container>
+                            <Row>
+                                <Col>
+                                    <img src={item[0].image} alt="" style={mystyle}>
+                                    </img>
+                                </Col>
+                                <Col xs={6}>
+                                    <p>{item[0].name}</p>
+                                </Col>
+                                <Col>
+                                    <p>{item[0].price}</p>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Card.Body>
+                </Col>
+                <Col>
+                    <Card.Body style={borderBottom}>
+                        <Container>
+                            <Row>
+                                <Col>
+                                    <img src={item[1].image} alt="" style={mystyle}>
+                                    </img>
+                                </Col>
+                                <Col xs={6}>
+                                    <p>{item[1].name}</p>
+                                </Col>
+                                <Col>
+                                    <p>{item[1].price}</p>
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Card.Body>
+                </Col>
+            </Row>
+        )
+    })
 
     return (
         <Container>
@@ -63,34 +123,34 @@ const OptimizePage = () => {
             <Row>
                 <Col xs={4}>
                     <Row>
-                    <Col xs={4}>
-                        <img src={cooler} alt="" style={mainImg} />
-                    </Col>
+                        <Col xs={4}>
+                            <img src={cooler} alt="" style={mainImg} />
+                        </Col>
                     </Row>
                     <Row style={margin}>
                         <Card style={card2}>
                             <Card.Body>
                                 <Container>
                                     <Row>
-                                    <Col>
-                                        <Row>
-                                            <p>Component price</p>
-                                        </Row>
-                                        <Row>   
-                                            <h4>$ 1899</h4>
-                                        </Row>
-                                    </Col>
-                                    <Col>
-                                        <Row>
-                                            <p>Build Fee</p>
-                                        </Row>
-                                        <Row>   
-                                            <h4>$ 99</h4>
-                                        </Row>
-                                    </Col>     
+                                        <Col>
+                                            <Row>
+                                                <p>Component price</p>
+                                            </Row>
+                                            <Row>
+                                                <h4>$ 1899</h4>
+                                            </Row>
+                                        </Col>
+                                        <Col>
+                                            <Row>
+                                                <p>Build Fee</p>
+                                            </Row>
+                                            <Row>
+                                                <h4>$ 99</h4>
+                                            </Row>
+                                        </Col>
                                     </Row>
-                                </Container>    
-                            </Card.Body> 
+                                </Container>
+                            </Card.Body>
                         </Card>
                     </Row>
                 </Col>
@@ -111,236 +171,9 @@ const OptimizePage = () => {
                                 </Col>
                             </Row>
                             <Row>
-                                <Card style={card}> 
+                                <Card style={card}>
                                     <Container>
-                                        <Row>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                        </Row>
-                                        <Row>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                            <Col>
-                                                <Card.Body style={borderBottom}>
-                                                    <Container>
-                                                        <Row>
-                                                            <Col>
-                                                                <img src={intel} alt="" style={mystyle}>
-                                                                </img>
-                                                            </Col>
-                                                            <Col xs={5}>
-                                                                <p>INTEL CORE I7-12700F 12-CORE</p>
-                                                            </Col>
-                                                            <Col>
-                                                                <p>$359</p>
-                                                            </Col>
-                                                        </Row>
-                                                    </Container>
-                                                </Card.Body>
-                                            </Col>
-                                        </Row>
+                                        {products}
                                     </Container>
                                 </Card>
                             </Row>
