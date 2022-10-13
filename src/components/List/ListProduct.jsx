@@ -1,13 +1,11 @@
 import { Card, Col, Container, Row } from "react-bootstrap"
 import { TrashButton, ShoppingButton } from "../Buttons"
-import keyboard from "../../assets/keyboard.png"
-import intel from "../../assets/Intel.png"
-import Nvidia from "../../assets/Nvidia.png"
-import nvme from "../../assets/nvme.png"
-import cooler from "../../assets/cooler.png"
-import controller from "../../assets/controller.png"
+import data from "./data"
 
-const ListProduct = () => {
+
+const ListProduct = ({ shoot }) => {
+
+    //Styles
     const mystyle = {
         width: "50px",
         height: "50px",
@@ -26,161 +24,55 @@ const ListProduct = () => {
     const titleStyle = {
         color: "white"
     }
+    //DATA
 
+    const data2 = data
+    console.log(data2)
+    const products = data2.map(item => {
+        return (
+            <Row key={item.id}>
+                <Card style={border}>
+                    <Card.Body>
+                        <Container>
+                            <Row>
+                                <Col>
+                                    <img src={item.image} alt="" style={mystyle}>
+                                    </img>
+                                </Col>
+                                <Col xs={5}>
+                                    <p>{item.name}</p>
+                                </Col>
+                                <Col>
+                                    <p>{item.price}</p>
+                                </Col>
+                                <Col>
+                                    <TrashButton  />
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Card.Body>
+                </Card>
+            </Row>
+        )
+    });
     return (
-            <Container style={containerStyle}>
-                <Row>
-                    <Col style={titleStyle}>
-                        <h2>Shopping car items</h2>
-                    </Col>
-                    <Col>
-                        <ShoppingButton />
-                    </Col>
-                </Row>
-                <Row>
-                    <Col>
-                        <Row>
-                        <Card style={border}>
-                            <Card.Body>
-                                <Container>
-                                    <Row>
-                                        <Col>
-                                            <img src={keyboard} alt="" style={mystyle}>
-                                            </img>
-                                        </Col>
-                                        <Col xs={5}>
-                                            <p>Keyboard & mouse bundle</p>
-                                        </Col>
-                                        <Col>
-                                            <p>$39</p>
-                                        </Col>
-                                        <Col>
-                                            <TrashButton />
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </Card.Body>
-                            </Card>
-                        </Row>
-                        <Row>
-                        <Card style={border}>
-                            <Card.Body>
-                                <Container>
-                                    <Row>
-                                        <Col>
-                                            <img src={intel} alt="" style={mystyle}>
-                                            </img>
-                                        </Col>
-                                        <Col xs={5}>
-                                            <p>INTEL CORE I7-12700F 12-CORE</p>
-                                        </Col>
-                                        <Col>
-                                            <p>$359</p>
-                                        </Col>
-                                        <Col>
-                                            <TrashButton />
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </Card.Body>
-                            </Card>
-                        </Row>
-                        <Row>
-                        <Card style={border}>
-                            <Card.Body>
-                                <Container>
-                                    <Row>
-                                        <Col>
-                                            <img src={Nvidia} alt="" style={mystyle}>
-                                            </img>
-                                        </Col>
-                                        <Col xs={5}>
-                                            <p>NVIDIA GEFORCE RTX 3070 8GB (VR READY)</p>
-                                        </Col>
-                                        <Col>
-                                            <p>$679</p>
-                                        </Col>
-                                        <Col>
-                                            <TrashButton />
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </Card.Body>
-                            </Card>
-                        </Row>
-                        <Row>
-                        <Card style={border}>
-                            <Card.Body>
-                                <Container>
-                                    <Row>
-                                        <Col>
-                                            <img src={nvme} alt="" style={mystyle}>
-                                            </img>
-                                        </Col>
-                                        <Col xs={5}>
-                                            <p>1TB NVME M.2</p>
-                                        </Col>
-                                        <Col>
-                                            <p>$99</p>
-                                        </Col>
-                                        <Col>
-                                            <TrashButton />
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </Card.Body>
-                            </Card>
-                        </Row>
-                        <Row>
-                        <Card style={border}>
-                            <Card.Body>
-                                <Container>
-                                    <Row>
-                                        <Col>
-                                            <img src={cooler} alt="" style={mystyle}>
-                                            </img>
-                                        </Col>
-                                        <Col xs={5}>
-                                            <p>COOLER MASTER TD500 RGB</p>
-                                        </Col>
-                                        <Col>
-                                            <p>$99</p>
-                                        </Col>
-                                        <Col>
-                                            <TrashButton />
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </Card.Body>
-                            </Card>
-                        </Row>
-                        <Row>
-                        <Card style={border}>
-                            <Card.Body>
-                                <Container>
-                                    <Row>
-                                        <Col>
-                                            <img src={controller} alt="" style={mystyle}>
-                                            </img>
-                                        </Col>
-                                        <Col xs={5}>
-                                            <p>BUILD + SETUP + TESTING + WARRANTY</p>
-                                        </Col>
-                                        <Col>
-                                            <p>$99</p>
-                                        </Col>
-                                        <Col>
-                                            <TrashButton />
-                                        </Col>
-                                    </Row>
-                                </Container>
-                            </Card.Body>
-                            </Card>
-                        </Row>
-                    </Col>
-                </Row>
-            </Container>
-    )
+        <Container style={containerStyle}>
+            <Row>
+                <Col style={titleStyle}>
+                    <h2>Shopping car items</h2>
+                </Col>
+                <Col>
+                    <ShoppingButton />
+                </Col>
+            </Row>
+            <Row>
+                <Col>
+                    {products}
+                </Col>
+            </Row>
+        </Container>
+    );
+
 }
 
 export default ListProduct
