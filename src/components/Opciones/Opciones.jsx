@@ -19,7 +19,7 @@ const Opciones = () => {
         marginTop: "50px",
         gap: "60px",
         color: "white",
-        width: "50%px"
+        width: "80%"
     }
     const img = {
         height: "100px",
@@ -29,7 +29,7 @@ const Opciones = () => {
 
     const opciones = {
     height: "280px",
-    width: "20px",
+    width: "10px",
     padding: "40px",
     backgroundColor: "rgb(73, 70, 70)",
     textAlign: "center",
