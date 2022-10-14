@@ -49,8 +49,11 @@ const Footer =()=>{
             <Row>
                 <Col xs lg="5">
                     <h4 style={h4f}>Sign up to our newsletter fot the lastest PC news.</h4><br />
-                    <input type='text' placeholder="Ingresa tu correo"/>
-                    <button type="button" style={button1}>SUBSCRIBIRSE </button><br />
+                    <form action="">
+                        <input type='text' placeholder="Ingresa tu correo"/>
+                        <button type="submit" style={button1}>SUBSCRIBIRSE </button><br />
+                    </form>
+                    
                 </Col>
                 <Col xs lg="7">
                     <Container>
