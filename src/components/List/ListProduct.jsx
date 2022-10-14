@@ -1,9 +1,9 @@
 import { Card, Col, Container, Row } from "react-bootstrap"
 import { TrashButton, ShoppingButton } from "../Buttons"
 import data from "./data"
+import { useState } from 'react';
 
-
-const ListProduct = ({ shoot }) => {
+const ListProduct = () => {
 
     //Styles
     const mystyle = {
@@ -25,10 +25,13 @@ const ListProduct = ({ shoot }) => {
         color: "white"
     }
     //DATA
-
-    const data2 = data
-    console.log(data2)
-    const products = data2.map(item => {
+    const [data2, updateData] = useState(data);
+    function handleRemoveItem (id) {
+        const newList = data2.filter((item) => item.id !== id);
+        updateData(newList);
+      };
+    
+    const products = data2.map((item) => {
         return (
             <Row key={item.id}>
                 <Card style={border}>
@@ -46,7 +49,7 @@ const ListProduct = ({ shoot }) => {
                                     <p>{item.price}</p>
                                 </Col>
                                 <Col>
-                                    <TrashButton  />
+                                    <TrashButton item={item} onRemove={handleRemoveItem} />
                                 </Col>
                             </Row>
                         </Container>
@@ -55,10 +58,11 @@ const ListProduct = ({ shoot }) => {
             </Row>
         )
     });
+
     return (
         <Container style={containerStyle}>
             <Row>
-                <Col style={titleStyle}>
+                <Col xs={8} style={titleStyle}>
                     <h2>Shopping car items</h2>
                 </Col>
                 <Col>
