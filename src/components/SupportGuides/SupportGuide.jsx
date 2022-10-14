@@ -1,5 +1,4 @@
 import { Card, Col, Container, Row } from "react-bootstrap"
-import "./supportguide.css"
 import ListGroup from 'react-bootstrap/ListGroup';
 import reset from "../../assets/reset.png"
 import laptop from "../../assets/laptop.png"

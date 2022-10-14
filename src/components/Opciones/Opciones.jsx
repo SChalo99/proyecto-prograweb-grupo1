@@ -1,4 +1,3 @@
-import "./opciones.css"
 import Badge from 'react-bootstrap/Badge';
 import book from "../../assets/book.png"
 import ticket from "../../assets/ticket.png"

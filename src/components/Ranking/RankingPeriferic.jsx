@@ -1,5 +1,4 @@
 import { Card, Container, Row, Col } from "react-bootstrap"
-import "./rankingperiferic.css"
 import headset from "../../assets/headset.png"
 import keyboard from "../../assets/keyboard.png"
 import mousepad from "../../assets/mousepad.png"

@@ -9,7 +9,6 @@ import cool from "../../assets/cool.png"
 import fan from "../../assets/fan.png"
 import motherb from "../../assets/motherb.png"
 import fuente from "../../assets/fuente.png"
-import "./bestbuild.css"
 import ListGroup from 'react-bootstrap/ListGroup'
 
 const BestBuilds = () => {
