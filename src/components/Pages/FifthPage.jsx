@@ -1,10 +1,9 @@
 
 
-
 const FifthPage = () => {
     const navigate = useNavigate();
     return <div className="bg-dark">
-        <Header />
+
         <div className="container" >
             <div className="row ">
                 <div className="col-4 text-white" >
@@ -85,3 +84,5 @@ const FifthPage = () => {
         </div>
     </div>
 }
+
+export default FifthPage
