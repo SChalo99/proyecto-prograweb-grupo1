@@ -1,5 +1,5 @@
 import './App.css';
-import OptimizePage from './components/Pages';
+import {OptimizePage, FifthPage} from './components/Pages';
 import SideBar from './components/SideMenu/SideBar';
 import ListProduct from './components/List';
 import CommonQuestions from './components/Questions';
@@ -22,6 +22,7 @@ function App() {
           <Route path="ranking" element={<RankingPeriferic />} />
           <Route path="optimized" element={<OptimizePage />} />
           <Route path="bestbuild" element = {<BestBuilds />}/>
+          <Route path="5" element = {<FifthPage />}/>
           <Route path="*" element={<SideBar />}/>
         </Routes>
       </BrowserRouter>
