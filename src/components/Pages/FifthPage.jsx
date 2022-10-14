@@ -1,25 +1,8 @@
-
-
 const FifthPage = () => {
-    const navigate = useNavigate();
     return <div className="bg-dark">
 
         <div className="container" >
             <div className="row ">
-                <div className="col-4 text-white" >
-                    <div class="d-grid gap-2">
-                        <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px"}} onClick={()=>{navigate("/proyecto_g3_new/orderHistory")}}>Order History</button>
-                        <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px"}}>Profile Info</button>
-                        <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px"}}>Log Out</button>
-                    </div>
-                </div>
-                {/* <div className="col-1 text-white" >
-                    <div class="d-grid gap-2">
-                        <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px" }}>Order History</button>
-                        <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px" }}>Profile Info</button>
-                        <button type="button" className="btn btn-light btn-lg" style={{ width: "320px", height: "50px" }}>Log Out</button>
-                    </div>
-                </div> */}
                 <div className="col-8 text-white">
                     <form className="row g-3 rounded-1 bg-white" style={{ width: "100%", height: "700px" }}>
                         <div className="row ">HOLA</div>

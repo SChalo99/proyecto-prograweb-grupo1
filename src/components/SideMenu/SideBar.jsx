@@ -3,15 +3,21 @@ import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
 import CommonQuestions from '../Questions';
-import ListProduct from '../List';
+import { FifthPage } from '../Pages';
 
 
 const SideBar = () => {
+    // Styles
+    const mystyles = {
+      gap:"5px",
+      marginLeft: "20px"
+    }
+
     return (
         <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
           <Row>
             <Col sm={4}>
-              <ListGroup>
+              <ListGroup style={mystyles}>
                 <ListGroup.Item action eventKey='#link1' href="#link1">
                   Order History
                 </ListGroup.Item>
@@ -29,7 +35,7 @@ const SideBar = () => {
                     <CommonQuestions />
                 </Tab.Pane>
                 <Tab.Pane eventKey="#link2">
-                    <ListProduct />
+                    <FifthPage />
                 </Tab.Pane>
               </Tab.Content>
             </Col>

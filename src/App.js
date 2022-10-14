@@ -6,13 +6,21 @@ import CommonQuestions from './components/Questions';
 import SupportGuide from './components/SupportGuides';
 import RankingPeriferic from './components/Ranking'
 import Opciones from './components/Opciones';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import BestBuilds from './components/Best_Builds';
+import {Container, Row, Col} from 'react-bootstrap';
+import Header from './components/layout/Header';
 
 function App() {
   return (
     <div className="App">
-      <BrowserRouter>
+      <Container>
+        <Col>
+          <Row>
+            <Header/>
+          </Row>
+          <Row>
+          <BrowserRouter>
         <Routes>
           <Route path="/" element={<SideBar />} />
           <Route path="productos" element={<ListProduct />} />
@@ -26,6 +34,10 @@ function App() {
           <Route path="*" element={<SideBar />}/>
         </Routes>
       </BrowserRouter>
+          </Row>
+        </Col>
+        </Container> 
+      
     </div>
   );
 }
