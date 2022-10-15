@@ -1,6 +1,7 @@
 import { useState } from "react";
 import React from "react";
 import { FaStar } from "react-icons/fa";
+import { useNavigate } from "react-router-dom"
 
 
 const colors = {
@@ -11,7 +12,10 @@ const colors = {
 
 
 
+
 function StarRating2() {
+
+  const navigate = useNavigate();
   const [currentValue, setCurrentValue] = useState(0);
   const [hoverValue, setHoverValue] = useState(undefined);
   const stars = Array(5).fill(0)
@@ -57,6 +61,7 @@ function StarRating2() {
 
       <button
         style={styles.button}
+        onClick={()=>{navigate("/home")}}
       >
         Submit
       </button>
