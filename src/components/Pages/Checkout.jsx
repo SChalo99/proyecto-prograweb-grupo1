@@ -108,7 +108,7 @@ const Checkout = () => {
                             <button type="submit" className="btn btn-danger" onClick={()=>{navigate("/productos")}}>Return to cart</button>
                         </div>
                         <div className="col" style={{textAlign:"end"}}>
-                            <button type="submit" className="btn btn-success" onClick={()=>{alert('Gracias por su compra'); navigate("/reviews")}}>Continue to shopping</button>
+                            <button type="submit" className="btn btn-success" onClick={()=>{alert('Gracias por su compra'); navigate("/StarRating2")}}>Continue to shopping</button>
                         </div>
                     </div>
                 </form>
