@@ -1,5 +1,5 @@
 import './App.css';
-import {OptimizePage, FifthPage} from './components/Pages';
+import {OptimizePage, FifthPage, ThridPage} from './components/Pages';
 import SideBar from './components/SideMenu/SideBar';
 import ListProduct from './components/List';
 import CommonQuestions from './components/Questions';
@@ -10,16 +10,43 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import BestBuilds from './components/Best_Builds';
 import {Container, Row, Col} from 'react-bootstrap';
 import Header from './components/layout/Header';
+import logo from './components/layout/Logo/logo-2.png';
+
 
 function App() {
+  const main = {
+    height: "100%",
+    width: "100%",
+};
+const img ={
+    marginTop: "20px",
+    marginLeft: "5%",
+};
+const div1 = { 
+    backgroundColor: "#343f4b",
+    margin: "0%",
+    height: "auto",
+    width:"auto",
+    overflow: "hidden",
+};
+const div2 = { 
+    textAlign: "left",
+    alignItems: "left",
+
+};
+
   return (
-    <div className="App">
-      <Container>
-        <Col>
-          <Row>
-            <Header/>
-          </Row>
-          <Row>
+    <div className="App" style={main}>
+      <div style={div1}>
+            <Row>
+                <Col xs lg="4">
+                    <div style={div2}>
+                    <a href="Home"><img style={img} src={logo} width="40" height="40" className="logo" alt="" /></a>
+                    </div>
+                </Col>
+                <Col xs lg="8"><Header/></Col>
+            </Row>
+            <Row>
           <BrowserRouter>
         <Routes>
           <Route path="/" element={<SideBar />} />
@@ -31,13 +58,13 @@ function App() {
           <Route path="optimized" element={<OptimizePage />} />
           <Route path="bestbuild" element = {<BestBuilds />}/>
           <Route path="5" element = {<FifthPage />}/>
+          <Route path="3" element = {<ThridPage />}/>
           <Route path="*" element={<SideBar />}/>
         </Routes>
       </BrowserRouter>
           </Row>
-        </Col>
-        </Container> 
-      
+            </div>
+          
     </div>
   );
 }

@@ -31,6 +31,7 @@ function Layout(props) {
         overflow: "hidden",
         paddingTop: "2%",
         paddingLeft: "2%",
+        marginTop: "200px"
     };
     const img ={
         marginTop: "20px",
@@ -40,12 +41,6 @@ function Layout(props) {
     return (
         <div style={main}>
             <div style={div1}>
-            <Row>
-                <Col xs lg="4">
-                    <img style={img} src={logo} width="200" height="200" className="logo" alt="" />
-                </Col>
-                <Col xs lg="8"><Header/></Col>
-            </Row>
             <Row>
                 {props.main}
             </Row>
