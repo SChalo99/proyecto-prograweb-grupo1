@@ -28,7 +28,7 @@ function Layout(props) {
         overflow: "hidden",
         paddingTop: "2%",
         paddingLeft: "2%",
-        marginTop: "200px"
+        marginTop: "253px"
     };
     return (
         <div style={main}>
