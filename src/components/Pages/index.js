@@ -3,3 +3,8 @@ export {default as FifthPage} from "./FifthPage";
 export {default as ThridPage} from "./ThridPage";
 export {default as SeventhPage} from "./SeventhPage";
 export {default as NineteenthPage} from "./NineteenthPage";
+export {default as Checkout} from "./Checkout";
+export {default as FirstPage} from "./FirstPage";
+export {default as SecondPage} from "./SecondPage";
+export {default as BuildBeginers} from "./BuildBeginers";
+export {default as CustomBuild} from "./CustomBuild";

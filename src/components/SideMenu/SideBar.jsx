@@ -2,8 +2,9 @@ import Col from 'react-bootstrap/Col';
 import ListGroup from 'react-bootstrap/ListGroup';
 import Row from 'react-bootstrap/Row';
 import Tab from 'react-bootstrap/Tab';
-import CommonQuestions from '../Questions';
+import OrderHistory from '../OrderHistory';
 import { FifthPage } from '../Pages';
+
 
 
 const SideBar = () => {
@@ -33,7 +34,7 @@ const SideBar = () => {
             <Col sm={8}>
               <Tab.Content>
                 <Tab.Pane eventKey="#link1">
-                    <CommonQuestions />
+                    <OrderHistory />
                 </Tab.Pane>
                 <Tab.Pane eventKey="#link2">
                     <FifthPage />

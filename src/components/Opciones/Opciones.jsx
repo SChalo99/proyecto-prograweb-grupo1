@@ -3,6 +3,8 @@ import book from "../../assets/book.png"
 import ticket from "../../assets/ticket.png"
 import FAQ from "../../assets/FAQ.png"
 import { Container, Row, Col } from "react-bootstrap";
+import { useNavigate } from "react-router-dom"
+
 const Opciones = () => {
     const containerTitulo = {
         marginLeft: "0px",
@@ -34,11 +36,14 @@ const Opciones = () => {
     textAlign: "center",
     alignItems: "center",
     margin: "0px auto",
+    cursor: "pointer"
     }
     const containerStyle = {
         width: "80%",
         marginLeft: "0px",
     }
+
+    const navigate = useNavigate();
     return (
         <Container >
             <Row style={containerTitulo}>
@@ -47,15 +52,15 @@ const Opciones = () => {
                 </Col>
             </Row>
             <Row style={containerOpciones}>
-                    <Col style={opciones}>
+                    <Col style={opciones} onClick={() => {navigate("/support")}}>
                         <img src={book} style={img} alt=""></img>
                         <h2>Guides</h2>
                     </Col>
-                    <Col style={opciones}>
+                    <Col style={opciones} onClick={() => {navigate("/preguntas")}}>
                         <img src={FAQ} style={img} alt=""></img>
                         <h2>FAQ</h2>
                     </Col> 
-                    <Col style={opciones}>
+                    <Col style={opciones} onClick={() => {navigate("/ticket")}}>
                         <img src={ticket} style={img} alt=""></img>
                         <h2>Submit Ticket</h2>
                     </Col>

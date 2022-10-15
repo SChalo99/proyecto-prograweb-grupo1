@@ -34,7 +34,7 @@ const Header =()=>{
                     <Nav.Link eventKey="/About"><h5 style={h5f}>About</h5></Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
-                    <Nav.Link eventKey="Support"><h5 style={h5f}>Support</h5></Nav.Link>
+                    <Nav.Link href="/opciones"><h5 style={h5f}>Support</h5></Nav.Link>
                     </Nav.Item>
                     <Nav.Item>
                     <Nav.Link eventKey="Review"><h5 style={h5f}>Review</h5></Nav.Link>

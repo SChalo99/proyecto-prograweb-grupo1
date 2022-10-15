@@ -1,7 +1,10 @@
 import {Container} from "react-bootstrap"
-
+import { useNavigate } from "react-router-dom"
 
 const His3=()=>{
+
+    const navigate = useNavigate();
+
     const btnHome = {
         backgroundColor:"#c25be9",
         border: "none",
@@ -37,8 +40,8 @@ const His3=()=>{
                 <h3 style={h3f}>Just for what you need</h3>
             </div>
             <div style={His3div}>
-            <button type="button" style={btnHome}>Build for begginers </button>
-            <button type="button" style={btnHome}>Advanced building </button>
+            <button type="button" style={btnHome} onClick={()=>{navigate("/bbeginers")}}>Build for begginers </button>
+            <button type="button" style={btnHome} onClick={()=>{navigate("/custom")}}>Advanced building </button>
 
       </div>
         </Container>

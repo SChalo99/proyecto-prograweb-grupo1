@@ -1,16 +1,17 @@
 import './App.css';
-import {OptimizePage, FifthPage, ThridPage, SeventhPage, NineteenthPage} from './components/Pages';
+import {OptimizePage, FifthPage, ThridPage, SeventhPage, NineteenthPage, Checkout, FirstPage, SecondPage, BuildBeginers, CustomBuild} from './components/Pages';
 import SideBar from './components/SideMenu/SideBar';
 import ListProduct from './components/List';
 import CommonQuestions from './components/Questions';
 import SupportGuide from './components/SupportGuides';
 import RankingPeriferic from './components/Ranking'
 import Opciones from './components/Opciones';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { BrowserRouter,Navigate, Routes, Route } from 'react-router-dom';
 import BestBuilds from './components/Best_Builds';
-import {Container, Row, Col} from 'react-bootstrap';
+import {Row, Col} from 'react-bootstrap';
 import Header from './components/layout/Header';
 import logo from './components/layout/Logo/logo-2.png';
+import Ticket from './components/Tickets';
 
 
 function App() {
@@ -49,7 +50,10 @@ const div2 = {
             <Row>
           <BrowserRouter>
         <Routes>
-          <Route path="/" element={<SideBar />} />
+          <Route path="/" element={<Navigate to="/login" replace />}/>
+          <Route path="home" element = {<ThridPage />}/>
+          <Route path="signup" element={<FirstPage />} />
+          <Route path="login" element={<SecondPage />} />
           <Route path="productos" element={<ListProduct />} />
           <Route path="preguntas" element={<CommonQuestions />} />
           <Route path="opciones" element={<Opciones />} />
@@ -58,9 +62,12 @@ const div2 = {
           <Route path="optimized" element={<OptimizePage />} />
           <Route path="bestbuild" element = {<BestBuilds />}/>
           <Route path="5" element = {<FifthPage />}/>
-          <Route path="3" element = {<ThridPage />}/>
           <Route path="7" element = {<SeventhPage />}/>
           <Route path="19" element = {<NineteenthPage />}/>
+          <Route path="checkout" element = {<Checkout />}/>
+          <Route path="bbeginers" element = {<BuildBeginers />}/>
+          <Route path="custom" element = {<CustomBuild />}/>
+          <Route path="ticket" element = {<Ticket />}/>
           <Route path="*" element={<SideBar />}/>
         </Routes>
       </BrowserRouter>

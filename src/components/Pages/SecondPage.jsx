@@ -1,4 +1,5 @@
-
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 
 
 const SecondPage = () => {
@@ -7,17 +8,16 @@ const SecondPage = () => {
     const navigate = useNavigate();
 
     const signUpOnclick = () => {
-        navigate("/proyecto-prograweb-grupo1/FirstPage")
+        navigate("/signup")
     }
 
     const logInOnclick = () => {
         if (email !== "" && password !== "") {
-            navigate("/proyecto-prograweb-grupo1/")
+            navigate("/home")
         }
     }
 
     return <div className="bg-dark">
-        <Header />
         <form className="createaccount container" style={{ width: "550px", paddingtop: "10px" }}>
             <div className="fst-italic text-white h6 ">LOG IN</div>
             <div className="text-white font-monospace fs-6" style={{ paddingBottom: "20px", paddingTop: "10px" }}>Log in with your details below to view your order</div>
@@ -51,3 +51,5 @@ const SecondPage = () => {
         </form>
     </div>
 }
+
+export default SecondPage

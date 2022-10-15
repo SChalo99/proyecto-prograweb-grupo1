@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons'
 import { Container, Col, Row, Button } from 'react-bootstrap'
+import { useNavigate } from "react-router-dom"
 
 const ShoppingButton = () => {
     const mystyle = {
@@ -10,8 +11,11 @@ const ShoppingButton = () => {
         fontFamily: "Arial",
         height: "40px"
       };
+
+      const navigate = useNavigate();
+
     return(
-        <Button variant="Primary" style={mystyle} >
+        <Button variant="Primary" style={mystyle} onClick={()=>{navigate("/checkout")}}>
             <Container>
                 <Row>
                     <Col>

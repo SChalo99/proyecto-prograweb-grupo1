@@ -1,4 +1,5 @@
-
+import { useNavigate } from "react-router-dom"
+import { useState } from "react"
 
 const FirstPage = () => {
     const [firstname, setFirstName] = useState("")
@@ -15,7 +16,6 @@ const FirstPage = () => {
     }
 
     return <div classNameName="body bg-dark">
-        <Header />
         <form className="createaccount container" style={{ width: "350px", paddingtop: "10px" }}>
             <div className="fst-italic text-white h6" style={{ paddingTop: "10px" }}>CREATE ACCOUNT</div>
             <div className="mb-3">
@@ -54,3 +54,5 @@ const FirstPage = () => {
         </form>
     </div>
 }
+
+export default FirstPage
