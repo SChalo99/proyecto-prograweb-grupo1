@@ -1,4 +1,4 @@
-import { Card, Container, Row, Col } from "react-bootstrap"
+import { Container, Row, Col } from "react-bootstrap"
 import Accordion from 'react-bootstrap/Accordion'
 import pcgamer from "../../assets/pcgamer.png"
 import intelcore from "../../assets/intelcore.png"
@@ -36,7 +36,6 @@ const BestBuilds = () => {
         alignItems: "center"
     }
     const nombre = {
-        textAlign: "left",
         marginRight: "20px",
         marginTop: "15px",
         width: "75%",
@@ -59,7 +58,7 @@ const BestBuilds = () => {
         paddingLeft: "30px",
         fontFamily: "Arial, Helvetica, sans-serif",
         fontSize: "x-large",
-        backgroundColor: "#002488",
+        backgroundImage: "linear-gradient(180deg, blue 10%, green 100%)",
         color: "white"
     }
     const acordion = {

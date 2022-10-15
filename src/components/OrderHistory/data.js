@@ -1,4 +1,4 @@
-export default [
+const data = [
     {
         id: 1,
         image: require("../../assets/keyboard.png"),
@@ -48,3 +48,5 @@ export default [
 
     },
 ]
+
+export default data

@@ -17,10 +17,7 @@ const OrderHistory = () => {
             width: "45%",
             marginLeft: "50px",
         }
-    
-        const titleStyle = {
-            color: "white"
-        }
+        
         //DATA
         const data2 = data;
         

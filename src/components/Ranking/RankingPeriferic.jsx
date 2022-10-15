@@ -45,7 +45,6 @@ const RankingPeriferic = () => {
         marginRight: "20px",
         marginTop: "15px",
         width: "75%",
-        textAlign: "left",
         alignItems: "center",
         fontSize: "x-large"
     }

@@ -1,4 +1,4 @@
-import { Card, Col, Container, Row } from "react-bootstrap"
+import { Col, Container, Row } from "react-bootstrap"
 import ListGroup from 'react-bootstrap/ListGroup';
 import reset from "../../assets/reset.png"
 import laptop from "../../assets/laptop.png"

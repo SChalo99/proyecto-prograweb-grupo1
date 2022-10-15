@@ -2,7 +2,7 @@
 import Col from 'react-bootstrap/Col';
 import Nav from 'react-bootstrap/Nav';
 import Row from 'react-bootstrap/esm/Row';
-import { Container, NavDropdown, Navbar } from 'react-bootstrap';
+import { Container, NavDropdown } from 'react-bootstrap';
 import search from '../Logo/search.png';
 import user from '../Logo/user.png';
 import buy from '../Logo/buy.png';

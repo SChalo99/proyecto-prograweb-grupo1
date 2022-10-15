@@ -77,7 +77,7 @@ const CustomBuild = () => {
     }
     const crearTarjeta = (name,price,img, id) => {
         return <div className="bg-white tarjeta" style={tarjeta}>
-            <img src={img} className="tarjetaimg" style={tarjetaimg}/>
+            <img src={img} className="tarjetaimg" style={tarjetaimg} alt=""/>
             <div className="tarjetaname" style={tarjetaname}>
                 {name}
             </div>
@@ -118,7 +118,7 @@ const CustomBuild = () => {
     const crearTarjetaCompra = (name, price, img) => {
         return <div>
             <div className="bg-gradient tarjetacompra p-3" style={tarjetacompra}>
-                <img src={img} className="tarjetaimg" style={tarjetaimg}/>
+                <img src={img} className="tarjetaimg" style={tarjetaimg} alt=""/>
                 <div className="tarjetanamecompra" style={tarjetanamecompra}>
                     {name}
                 </div>

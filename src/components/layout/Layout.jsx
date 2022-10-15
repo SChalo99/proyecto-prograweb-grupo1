@@ -1,9 +1,6 @@
 
 import Row from 'react-bootstrap/Row';
-import Header from './Header';
 import Footer from './Footer';
-import Col from 'react-bootstrap/Col';
-import logo from './Logo/logo-2.png';
 
 
 function Layout(props) {
@@ -32,11 +29,6 @@ function Layout(props) {
         paddingTop: "2%",
         paddingLeft: "2%",
         marginTop: "200px"
-    };
-    const img ={
-        marginTop: "20px",
-        marginLeft: "0%",
-        textAlign: "left"
     };
     return (
         <div style={main}>

@@ -1,4 +1,3 @@
-import Badge from 'react-bootstrap/Badge';
 import book from "../../assets/book.png"
 import ticket from "../../assets/ticket.png"
 import FAQ from "../../assets/FAQ.png"
@@ -38,11 +37,6 @@ const Opciones = () => {
     margin: "0px auto",
     cursor: "pointer"
     }
-    const containerStyle = {
-        width: "80%",
-        marginLeft: "0px",
-    }
-
     const navigate = useNavigate();
     return (
         <Container >

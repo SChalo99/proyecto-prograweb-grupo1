@@ -1,11 +1,6 @@
 import { Container, Col, Row } from 'react-bootstrap'
 import { BackButton, ShoppingButton } from "../Buttons"
-import keyboard from "../../assets/keyboard.png"
-import intel from "../../assets/Intel.png"
-import Nvidia from "../../assets/Nvidia.png"
-import nvme from "../../assets/nvme.png"
 import cooler from "../../assets/cooler.png"
-import controller from "../../assets/controller.png"
 import Card from 'react-bootstrap/Card';
 import data from './data'
 
