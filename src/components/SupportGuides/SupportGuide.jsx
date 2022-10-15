@@ -17,7 +17,8 @@ const SupportGuide = () => {
 
     const containerOpciones = {
         marginTop: "40px",
-        marginLeft: "140px"
+        marginLeft: "140px",
+        width: "100%"
     }
     const filaLista = {
         textAlign: "left",

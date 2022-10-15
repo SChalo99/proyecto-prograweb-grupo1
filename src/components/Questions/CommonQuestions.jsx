@@ -41,7 +41,7 @@ const CommonQuestions = () => {
         width: "30px"
     }
     const containerStyle = {
-        width: "80%",
+        width: "100%",
         marginLeft: "0px",
     }
     return (
