@@ -12,7 +12,8 @@ import {Row, Col} from 'react-bootstrap';
 import Header from './components/layout/Header';
 import logo from './components/layout/Logo/logo-2.png';
 import Ticket from './components/Tickets';
-
+import About from "./components/About";
+import StarRating2 from './components/StarRating2';
 
 function App() {
   const main = {
@@ -73,6 +74,8 @@ const div2 = {
           <Route path="reviews" element={<TwentyPage />}/>
           <Route path="passwordreset" element={<Sorpresa />}/>
           <Route path="*" element={<Error404 />}/>
+          <Route path="about" element={<About/>} />
+          <Route path="StarRating2" element={<StarRating2/>} />
         </Routes>
       </BrowserRouter>
           </Row>

@@ -31,7 +31,7 @@ const Header = () => {
                                 <Nav.Link href="/home"><h5 style={h5f}>Home</h5></Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
-                                <Nav.Link eventKey="/About"><h5 style={h5f}>About</h5></Nav.Link>
+                                <Nav.Link href="/about"><h5 style={h5f}>About</h5></Nav.Link>
                             </Nav.Item>
                             <Nav.Item>
                                 <Nav.Link href="/opciones"><h5 style={h5f}>Support</h5></Nav.Link>
