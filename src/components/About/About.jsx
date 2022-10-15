@@ -5,7 +5,7 @@ import "./About.css";
 const About=()=> {
   return (
     <div className="about">
-      <h1>About Us</h1>
+      <h1>CHECKOUT OUR LATEST BUILD AND MAKE IT YOUR OWN!</h1>
       <p>Hola compradores de tecnologia!</p>
       <br />
       <p>
@@ -23,7 +23,7 @@ const About=()=> {
         <iframe
           width="560"
           height="315"
-          src={"https://www.youtube.com/watch?v=znx_jCKLwXw&ab_channel=PCBuilder"}
+          src={"https://www.youtube.com/embed/znx_jCKLwXw"}
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -32,7 +32,7 @@ const About=()=> {
         <iframe
           width="560"
           height="315"
-          src={"https://www.youtube.com/watch?v=_Cg-MNGuYWY&ab_channel=PCCentric"}
+          src={"https://www.youtube.com/embed/_Cg-MNGuYWY"}
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -41,7 +41,7 @@ const About=()=> {
         <iframe
           width="560"
           height="315"
-          src={"https://www.youtube.com/watch?v=SZK04rWVIW4&ab_channel=DesignsByIFR"}
+          src={"https://www.youtube.com/embed/FTxIJgx0pxU"}
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -50,7 +50,7 @@ const About=()=> {
         <iframe
           width="560"
           height="315"
-          src="https://www.youtube.com/embed/3pzKY6tqf9c"
+          src="https://www.youtube.com/embed/0cPMl5OsKSY"
           title="YouTube video player"
           frameborder="0"
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
