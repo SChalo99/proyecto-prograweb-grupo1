@@ -31,7 +31,9 @@ const His7=()=>{
 
             alignItems: "center",
             textAlign: "center",
-            padding: "15%",
+            paddingLeft: "15%",
+            paddingRight: "15%",
+            paddingTop: "5%",
         
         };
     return(

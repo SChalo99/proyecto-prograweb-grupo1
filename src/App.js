@@ -1,5 +1,5 @@
 import './App.css';
-import {OptimizePage, FifthPage, ThridPage} from './components/Pages';
+import {OptimizePage, FifthPage, ThridPage, SeventhPage, NineteenthPage} from './components/Pages';
 import SideBar from './components/SideMenu/SideBar';
 import ListProduct from './components/List';
 import CommonQuestions from './components/Questions';
@@ -59,6 +59,8 @@ const div2 = {
           <Route path="bestbuild" element = {<BestBuilds />}/>
           <Route path="5" element = {<FifthPage />}/>
           <Route path="3" element = {<ThridPage />}/>
+          <Route path="7" element = {<SeventhPage />}/>
+          <Route path="19" element = {<NineteenthPage />}/>
           <Route path="*" element={<SideBar />}/>
         </Routes>
       </BrowserRouter>

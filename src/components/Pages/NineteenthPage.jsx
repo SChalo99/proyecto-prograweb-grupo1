@@ -1,9 +1,9 @@
 import His19 from '../His19';
-import Layout from '../layout/Layout2';
+
 
 const NineteenthPage=()=>{
     return(
-        <Layout main = {<His19/>}></Layout>
+        <His19/>
     )
 }
 export default NineteenthPage
