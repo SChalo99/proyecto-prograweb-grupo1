@@ -41,7 +41,7 @@ const CommonQuestions = () => {
         width: "30px"
     }
     const containerStyle = {
-        width: "80%",
+        width: "100%",
         marginLeft: "0px",
     }
     return (
@@ -69,7 +69,7 @@ const CommonQuestions = () => {
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
                         <img src={paquete} style={icons_tabla} alt=""></img>
-                        <p style={p}>How long will it take for my PC to arrive</p>
+                        <p style={p}>How long will it take for my PC to arrive?</p>
                     </ListGroup.Item>
                     <ListGroup.Item style={filaLista}>
                         <img src={tierra} style={icons_tabla} alt=""></img>
