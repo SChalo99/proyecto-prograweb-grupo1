@@ -1,5 +1,5 @@
 import './App.css';
-import {OptimizePage, FifthPage, ThridPage, SeventhPage, NineteenthPage, Checkout, FirstPage, SecondPage, BuildBeginers, CustomBuild, TwentyfirstPage, TwentyPage} from './components/Pages';
+import {OptimizePage, FifthPage, ThridPage, SeventhPage, NineteenthPage, Checkout, FirstPage, SecondPage, BuildBeginers, CustomBuild, TwentyfirstPage, TwentyPage, Sorpresa, Error404} from './components/Pages';
 import SideBar from './components/SideMenu/SideBar';
 import ListProduct from './components/List';
 import CommonQuestions from './components/Questions';
@@ -71,7 +71,8 @@ const div2 = {
           <Route path="user" element={<SideBar />}/>
           <Route path="influencer" element={<TwentyfirstPage />}/>
           <Route path="reviews" element={<TwentyPage />}/>
-          <Route path="*" element={<ThridPage />}/>
+          <Route path="passwordreset" element={<Sorpresa />}/>
+          <Route path="*" element={<Error404 />}/>
         </Routes>
       </BrowserRouter>
           </Row>

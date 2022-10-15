@@ -10,3 +10,5 @@ export {default as BuildBeginers} from "./BuildBeginers";
 export {default as CustomBuild} from "./CustomBuild";
 export {default as TwentyfirstPage} from "./TwentyfirstPage";
 export {default as TwentyPage} from "./TwentyPage";
+export {default as Sorpresa} from "./Sorpresa";
+export {default as Error404} from "./Error404";
