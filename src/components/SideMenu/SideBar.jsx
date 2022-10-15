@@ -10,7 +10,8 @@ const SideBar = () => {
     // Styles
     const mystyles = {
       gap:"5px",
-      marginLeft: "20px"
+      marginLeft: "20px",
+      marginTop:"50px"
     }
 
     return (
