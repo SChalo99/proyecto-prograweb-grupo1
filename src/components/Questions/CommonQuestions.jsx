@@ -47,7 +47,7 @@ const CommonQuestions = () => {
     return (
         <Container style={containerStyle}>
             <Row style={containerTitulo}>
-                <h1 class="titulo">Common Questions</h1>
+                <h1 className="titulo">Common Questions</h1>
             </Row>
             <Row style={containerOpciones}>
                 <ListGroup>

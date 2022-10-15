@@ -55,7 +55,7 @@ const FifthPage = () => {
                         </div>
 
                         <div className="col-md-4 text-black">
-                            <button type="submit" class="btn btn-primary" style={{ width: "200px", height: "40px" }}>Update Info</button>
+                            <button type="submit" className="btn btn-primary" style={{ width: "200px", height: "40px" }}>Update Info</button>
                         </div>
 
                         <div className="col-md-4">

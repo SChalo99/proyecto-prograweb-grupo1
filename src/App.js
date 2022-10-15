@@ -1,5 +1,5 @@
 import './App.css';
-import {OptimizePage, FifthPage, ThridPage, SeventhPage, NineteenthPage, Checkout, FirstPage, SecondPage, BuildBeginers, CustomBuild} from './components/Pages';
+import {OptimizePage, FifthPage, ThridPage, SeventhPage, NineteenthPage, Checkout, FirstPage, SecondPage, BuildBeginers, CustomBuild, TwentyfirstPage, TwentyPage} from './components/Pages';
 import SideBar from './components/SideMenu/SideBar';
 import ListProduct from './components/List';
 import CommonQuestions from './components/Questions';
@@ -68,7 +68,10 @@ const div2 = {
           <Route path="bbeginers" element = {<BuildBeginers />}/>
           <Route path="custom" element = {<CustomBuild />}/>
           <Route path="ticket" element = {<Ticket />}/>
-          <Route path="*" element={<SideBar />}/>
+          <Route path="user" element={<SideBar />}/>
+          <Route path="influencer" element={<TwentyfirstPage />}/>
+          <Route path="reviews" element={<TwentyPage />}/>
+          <Route path="*" element={<ThridPage />}/>
         </Routes>
       </BrowserRouter>
           </Row>

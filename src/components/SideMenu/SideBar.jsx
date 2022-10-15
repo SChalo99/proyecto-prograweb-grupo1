@@ -16,9 +16,9 @@ const SideBar = () => {
     }
 
     return (
-        <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link1">
+        <Tab.Container id="list-group-tabs-example" defaultActiveKey="#link2">
           <Row>
-            <Col sm={4}>
+            <Col sm={3}>
               <ListGroup style={mystyles}>
                 <ListGroup.Item action eventKey='#link1' href="#link1">
                   Order History
@@ -26,12 +26,12 @@ const SideBar = () => {
                 <ListGroup.Item action eventKey='#link2' href="#link2">
                   Profile Info
                 </ListGroup.Item>
-                <ListGroup.Item action href="/button">
+                <ListGroup.Item action href="/login">
                   Logout
                 </ListGroup.Item>
               </ListGroup>
             </Col>
-            <Col sm={8}>
+            <Col sm={9}>
               <Tab.Content>
                 <Tab.Pane eventKey="#link1">
                     <OrderHistory />

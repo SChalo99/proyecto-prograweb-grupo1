@@ -35,7 +35,7 @@ const SixPage = () => {
       <div className="search-container">
         <div className="search-inner" style={{justifyContent: "end"}}>
           <input type="text" style={{backgroundColor: "gray"}} className={"oculto" + (activo ? "mostrado" : "")} value={value} onChange={onChange} />
-          <button className="btn-header"  onClick={alternarBarra}> <i class="bi bi-search"></i> </button>
+          <button className="btn-header"  onClick={alternarBarra}> <i className="bi bi-search"></i> </button>
         </div>
         <div className="dropdown">
           {

@@ -26,12 +26,12 @@ const Ticket = () => {
                     <label className="form-label">Subject</label>
                     <input type="email" className="form-control"></input>
                 </div>
-               <div class="form-group">
+               <div className="form-group">
                     <label for="exampleFormControlDescription">Description</label>
-                    <textarea class="form-control" id="exampleFormControlDescription" rows="3"></textarea>
+                    <textarea className="form-control" id="exampleFormControlDescription" rows="3"></textarea>
                 </div>
                 <div className="col-md-20" >
-                    <button type="submit" class="btn btn-primary" style={{ width: "160px", height: "40px", padding: "5px",textAlign: "center"}}>Submit</button>
+                    <button type="submit" className="btn btn-primary" style={{ width: "160px", height: "40px", padding: "5px",textAlign: "center"}}>Submit</button>
                 </div>
             </form>
         </div>

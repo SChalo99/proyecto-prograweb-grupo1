@@ -8,3 +8,5 @@ export {default as FirstPage} from "./FirstPage";
 export {default as SecondPage} from "./SecondPage";
 export {default as BuildBeginers} from "./BuildBeginers";
 export {default as CustomBuild} from "./CustomBuild";
+export {default as TwentyfirstPage} from "./TwentyfirstPage";
+export {default as TwentyPage} from "./TwentyPage";

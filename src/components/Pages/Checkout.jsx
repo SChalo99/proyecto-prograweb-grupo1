@@ -105,10 +105,10 @@ const Checkout = () => {
                     </div>
                     <div className="row" style={{justifyContent:"space-around"}} >
                         <div className="col" style={{textAlign:"start"}}>
-                            <button type="submit" class="btn btn-danger" onClick={()=>{navigate("/productos")}}>Return to cart</button>
+                            <button type="submit" className="btn btn-danger" onClick={()=>{navigate("/productos")}}>Return to cart</button>
                         </div>
                         <div className="col" style={{textAlign:"end"}}>
-                            <button type="submit" class="btn btn-success" onClick={()=>{navigate("/resenas")}}>Continue to shopping</button>
+                            <button type="submit" className="btn btn-success" onClick={()=>{alert('Gracias por su compra'); navigate("/reviews")}}>Continue to shopping</button>
                         </div>
                     </div>
                 </form>
@@ -120,7 +120,7 @@ const Checkout = () => {
                         <input type="email" className="form-control" placeholder="Discount code"></input>
                     </div>
                     <div className="col-2 ml-1" style={{textAlign:"start"}}>
-                        <button type="submit" class="btn btn-success" >Apply</button>
+                        <button type="submit" className="btn btn-success" >Apply</button>
                     </div>
                 </div>
                 <button type="button" className="btn both3 w-100 mr-1" style={{ backgroundColor: "rgb(151, 105, 194)"}}>SHOP</button>
