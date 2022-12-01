@@ -1,4 +1,4 @@
-import His21 from '../His21';
+import { His21 } from "../His21"
 
 const TwentyfirstPage=()=>{
     return(

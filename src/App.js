@@ -11,7 +11,6 @@ import BestBuilds from './components/Best_Builds';
 import {Row, Col} from 'react-bootstrap';
 import Header from './components/layout/Header';
 import logo from './components/layout/Logo/logo-2.png';
-import Ticket from './components/Tickets';
 import About from "./components/About";
 import StarRating2 from './components/StarRating2';
 
@@ -68,7 +67,7 @@ const div2 = {
           <Route path="checkout" element = {<Checkout />}/>
           <Route path="bbeginers" element = {<BuildBeginers />}/>
           <Route path="custom" element = {<CustomBuild />}/>
-          <Route path="ticket" element = {<Ticket />}/>
+          <Route path="ticket" element = {<NineteenthPage />}/>
           <Route path="user" element={<SideBar />}/>
           <Route path="influencer" element={<TwentyfirstPage />}/>
           <Route path="reviews" element={<TwentyPage />}/>

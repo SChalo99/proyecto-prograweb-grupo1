@@ -1,6 +1,28 @@
-
+import { useState, useEffect } from 'react'
+import FormularioApi from '../../api/formulario'
 
 const His19=()=>{
+
+    const defaultFormulario = {
+        email: '',
+        name: '',
+        phone: 0,
+        subject: '',
+        descrition: ''
+    }
+    const [formulario, setFormulario] = useState(defaultFormulario)
+    //se usa useeffect para que detecte los cambios
+    useEffect(()=> {
+    }, [formulario])
+    //se pone lo que pasa cuando se le da click al boton
+    const handleOnClick = () => {
+       
+        FormularioApi.post(formulario)
+            .then(response => {
+                console.log({response})
+                alert(response.statusText)
+            });
+    }
 
 
     const h2 ={
@@ -30,16 +52,17 @@ const His19=()=>{
     const textrequest1 ={
         
         height: "25px",
-        paddingRight: "600px",
+        width: "780px",
         textAlign: "left",
         alignItems: "left",
     };
     const textrequest2 ={
-        paddingRight: "600px",
         height: "200px",
+        width: "790px",
         textAlign: "left",
         alignItems:"left",
         paddingTop: "0px",
+        paddingBottom: "0px"
     };
     const btnSubmit ={
         backgroundColor: "#c25be9",
@@ -60,20 +83,26 @@ const His19=()=>{
         <div style={div1}>
             <h2 style={h2}>Submit a Request</h2>
             <div style={pag19}>
-            
+                
             <div style={request}>
                 <form action="">
-                <p >Email</p>
-                    <input type='text' style={textrequest1} placeholder="" /><br />
+                    <p >Email</p>
+                    <input type='mail' style={textrequest1} placeholder="" value={formulario.email} 
+                    onChange={e => setFormulario({...formulario, email: e.currentTarget.value})}/><br />
                     <p >Name</p>
-                    <input type='text' style={textrequest1} placeholder=""/><br />
+                    <input type='text' style={textrequest1} placeholder="" value={formulario.name} 
+                    onChange={e => setFormulario({...formulario, name: e.currentTarget.value})}/><br />
                     <p >Phone</p>
-                    <input type='text' style={textrequest1} placeholder="" /><br />
+                    <input type='text' style={textrequest1} placeholder="" value={formulario.phone} 
+                    onChange={e => setFormulario({...formulario, phone: e.currentTarget.value})}/><br />
                     <p >Subject</p>
-                    <input type='text' style={textrequest1} placeholder="" /><br />
+                    <input type='text' style={textrequest1} placeholder="" value={formulario.subject} 
+                    onChange={e => setFormulario({...formulario, subject: e.currentTarget.value})}/><br />
                     <p >Description</p>
-                    <input type='text' style={textrequest2} placeholder="" /><br />
-                    <button style={btnSubmit} type="submit">Submit</button>
+                    <input type='text' style={textrequest2} placeholder="" value={formulario.descrition}
+                    onChange={e => setFormulario({...formulario, descrition: e.currentTarget.value})}/><br />
+                    
+                    <button style={btnSubmit} type="submit" onClick={() => handleOnClick()}>Submit</button>
                 </form>
             </div>
         </div>

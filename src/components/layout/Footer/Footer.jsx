@@ -7,6 +7,10 @@ import twitter from '../Logo/twitter.png';
 import instagram from '../Logo/instagram.png';
 
 const Footer =()=>{
+
+    
+    
+    
     const h4f= {
         color: "aliceblue",
         fontSize: "16px",
@@ -50,8 +54,8 @@ const Footer =()=>{
                 <Col xs lg="5">
                     <h4 style={h4f}>Sign up to our newsletter fot the lastest PC news.</h4><br />
                     <form action="">
-                        <input type='text' placeholder="Ingresa tu correo"/>
-                        <button type="submit" style={button1}>SUBSCRIBIRSE </button><br />
+                        <input type='mail' placeholder="Ingresa tu correo" />
+                        <button type="submit" style={button1} >SUBSCRIBIRSE </button><br />
                     </form>
                     
                 </Col>
