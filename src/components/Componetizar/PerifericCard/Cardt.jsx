@@ -32,6 +32,7 @@ const precio = {
 }
 const PerifericCard = (props) => {
     const { srcimg, namep, preciop } = props;
+    return(
     <Card style={border}>
         <Card.Body>
             <Container>
@@ -49,7 +50,8 @@ const PerifericCard = (props) => {
                 </Row>
             </Container>
         </Card.Body>
-    </Card>
+        </Card>
+    )
 }
 
 export default PerifericCard

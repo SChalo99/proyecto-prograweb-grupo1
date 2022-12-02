@@ -1,10 +1,10 @@
 import { Container, Row, Col } from "react-bootstrap"
-import Cardt from "../Componetizar/PerifericCard"
+import Cardt from "../Componetizar/PerifericCard/index.js"
 
 const RankingPeriferic = () => {
     const data = [{
         namep: "Headset",
-        srcimg: "img",
+        srcimg: "img/headset.png",
         preciop: "$25"
     },
         {
@@ -15,12 +15,12 @@ const RankingPeriferic = () => {
     {
         namep: "Standard mouse pad",
         srcimg: "img/mousepad.png",
-        text: "$19"
+        preciop: "$19"
     },
     {
         namep: "XL mouse pad",
         srcimg: "img/mousepadXL.png",
-        text: "$29"
+        preciop: "$29"
     }
     ]
     const container = {
