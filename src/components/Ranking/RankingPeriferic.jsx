@@ -1,28 +1,9 @@
-import { Container, Row, Col } from "react-bootstrap"
-import Cardt from "../Componetizar/PerifericCard/index.js"
+import { Card, Container, Row, Col } from "react-bootstrap"
+import data from "./data"
+import { useState, useEffect } from 'react'
+import perifericos from "../../api/rankingperifericos"
 
 const RankingPeriferic = () => {
-    const data = [{
-        namep: "Headset",
-        srcimg: "img/headset.png",
-        preciop: "$25"
-    },
-        {
-        namep: "Mouse & keyboards",
-        srcimg: "img/keyboard.png",
-        preciop: "$39"
-    },
-    {
-        namep: "Standard mouse pad",
-        srcimg: "img/mousepad.png",
-        preciop: "$19"
-    },
-    {
-        namep: "XL mouse pad",
-        srcimg: "img/mousepadXL.png",
-        preciop: "$29"
-    }
-    ]
     const container = {
         textAlign: "left",
         alignItems: "left",
@@ -42,6 +23,68 @@ const RankingPeriferic = () => {
         width: "70%",
         marginLeft: "-50px"
     }
+    const mystyle = {
+        width: "60px",
+        height: "60px",
+        padding: "1x"
+    };
+
+    const border = {
+        border: "1px solid black",
+        marginTop: "8px",
+    }
+    const imagen = {
+        display: "flex",
+        width: "15%",
+        textAlign: "center",
+        alignItems: "center"
+    }
+    const nombre = {
+        textAlign: "left",
+        marginRight: "20px",
+        marginTop: "15px",
+        width: "75%",
+        alignItems: "center",
+        fontSize: "x-large"
+    }
+    const precio = {
+        textAlign: "left",
+        marginTop: "15px",
+        width: "15%",
+        fontSize: "x-large"
+    }
+
+    const [fperiferic, setperifericos] = useState([]);
+
+    const periferico = async () => {
+        const perifericResponse = await perifericos.getAll();
+        setperifericos(perifericResponse.data)
+    };
+
+    useEffect(() => {
+        periferico()
+    }, []);
+
+    const periferic = perifericos.map((item) => {
+        return (
+            <Row>
+                <Card style={border}>
+                    <Card.Body>
+                        <Container>
+                            <Row>
+                                <Col xs={5} style={nombre}>
+                                    {item.name}
+                                </Col>
+                                <Col style={precio}>
+                                    {item.price}
+                                </Col>
+                            </Row>
+                        </Container>
+                    </Card.Body>
+                </Card>
+            </Row>
+        )
+    });
 
     return (
         <Container style={container}>
@@ -52,24 +95,13 @@ const RankingPeriferic = () => {
                 <Container style={containerStyle}>
                     <Row>
                         <Col>
-                            <Row>
-                                <Cardt {...data[0]} />
-                            </Row>
-                            <Row>
-                                <Cardt {...data[1]} />
-                            </Row>
-                            <Row>
-                                <Cardt {...data[2]} />
-                            </Row>
-                            <Row>
-                                <Cardt {...data[3]} />
-                            </Row>
+                            {periferic}
                         </Col>
                     </Row>
                 </Container>
             </Row>
         </Container>
-    )
+    )   
 }
 
 export default RankingPeriferic
