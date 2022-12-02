@@ -1,5 +1,4 @@
 import { Card, Container, Row, Col } from "react-bootstrap"
-import data from "./data"
 import { useState, useEffect } from 'react'
 import perifericos from "../../api/rankingperifericos"
 
@@ -65,18 +64,22 @@ const RankingPeriferic = () => {
         periferico()
     }, []);
 
-    const periferic = perifericos.map((item) => {
+    const periferic = fperiferic.map((item) => {
         return (
             <Row>
                 <Card style={border}>
                     <Card.Body>
                         <Container>
                             <Row>
+                            <Col style={imagen}>
+                                <img src={item.description} alt="" style={mystyle}>
+                                    </img>
+                                </Col>
                                 <Col xs={5} style={nombre}>
                                     {item.name}
                                 </Col>
                                 <Col style={precio}>
-                                    {item.price}
+                                    ${item.price}
                                 </Col>
                             </Row>
                         </Container>
