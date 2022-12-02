@@ -1,10 +1,36 @@
-import { Col, Container, Row } from "react-bootstrap"
-import ListGroup from 'react-bootstrap/ListGroup';
+import { ListGroup, Col, Container, Row } from "react-bootstrap"
 import reset from "../../assets/reset.png"
 import laptop from "../../assets/laptop.png"
 import settings from "../../assets/settings.png"
 import measure from "../../assets/measure.png"
+import Listgroupt from "../Componetizar/ListGroupGuide"
+
 const SupportGuide = () => {
+    const data = [{
+        srcimg: laptop,
+        textp: "Build Redux Quick Start Guide",
+    },
+    {
+        srcimg: laptop,
+        textp: "System Overview",
+    },
+    {
+        srcimg: settings,
+        textp: "Troubleshooting - Display",
+    },
+    {
+        srcimg: reset,
+        textp: "Reaseting Guide - Memory",
+    },
+    {
+        srcimg: reset,
+        textp: "Reaseting Guide - Graphics Card",
+    },
+    {
+        srcimg: measure,
+        textp: "Realignment Guide - Rear I/O",
+    }
+    ]
     const containerTitulo = {
         marginTop: "30px",
         paddingLeft: "50px",
@@ -19,23 +45,6 @@ const SupportGuide = () => {
         marginTop: "40px",
         marginLeft: "140px",
         width: "100%"
-    }
-    const filaLista = {
-        textAlign: "left",
-        display: "flex",
-        alignItems: "center",
-        width: "75%",
-        paddingLeft: "30px",
-        fontFamily: "Arial, Helvetica, sans-serif",
-        fontSize: "x-large"
-    }
-
-    const p = {
-        margin: "15px"
-    }
-    const icons_tabla = {
-        height: "30px",
-        width: "30px"
     }
     const containerStyle = {
         width: "80%",
@@ -55,30 +64,12 @@ return (
         </Row>
         <Row style={containerOpciones}>
             <ListGroup>
-                <ListGroup.Item style={filaLista}>
-                    <img src={laptop} style={icons_tabla} alt=""></img>
-                    <p style={p}>Build Redux Quick Start Guide</p>
-                </ListGroup.Item>
-                <ListGroup.Item style={filaLista}>
-                    <img src={laptop} style={icons_tabla} alt=""></img>
-                    <p style={p}>System Overview</p>
-                </ListGroup.Item>
-                <ListGroup.Item style={filaLista}>
-                    <img src={settings} style={icons_tabla} alt=""></img>
-                    <p style={p}>Troubleshooting - Display</p>
-                </ListGroup.Item>
-                <ListGroup.Item style={filaLista}>
-                    <img src={reset} style={icons_tabla} alt=""></img>
-                    <p style={p}>Reaseting Guide - Memory</p>
-                </ListGroup.Item>
-                <ListGroup.Item style={filaLista}>
-                    <img src={reset} style={icons_tabla} alt=""></img>
-                    <p style={p}>Reaseting Guide - Graphics Card</p>
-                </ListGroup.Item>
-                <ListGroup.Item style={filaLista}>
-                    <img src={measure} style={icons_tabla} alt=""></img>
-                    <p style={p}>Realignment Guide - Rear I/O</p>
-                </ListGroup.Item>
+                <Listgroupt {...data[0]} />
+                <Listgroupt {...data[1]} />
+                <Listgroupt {...data[2]} />
+                <Listgroupt {...data[3]} />
+                <Listgroupt {...data[4]} />
+                <Listgroupt {...data[5]} />
             </ListGroup>
         </Row>
     </Container>

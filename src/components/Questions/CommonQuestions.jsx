@@ -1,5 +1,4 @@
-import {Container, Row } from "react-bootstrap"
-import ListGroup from 'react-bootstrap/ListGroup';
+import {ListGroup, Container, Row } from "react-bootstrap"
 import cash from "../../assets/cash.png"
 import cancel from "../../assets/cancel.png"
 import warranty from "../../assets/warranty.png"
@@ -7,8 +6,38 @@ import refund from "../../assets/refund.png"
 import paquete from "../../assets/package.png"
 import tierra from "../../assets/earth.png"
 import pantalla from "../../assets/screen.png"
+import ListGroupq from "../Componetizar/ListGroupQuestions"
 
 const CommonQuestions = () => {
+    const data = [{
+        srcimg: cash,
+        textp: "Refund Policy",
+    },
+    {
+        srcimg: cancel,
+        textp: "Cancellation Policy",
+    },
+    {
+        srcimg: warranty,
+        textp: "Warranty Services",
+    },
+    {
+        srcimg: refund,
+        textp: "Financing",
+    },
+    {
+        srcimg: paquete,
+        textp: "How long will it take for my PC to arrive?",
+    },
+    {
+        srcimg: tierra,
+        textp: "Do you ship internationally?",
+    },
+    {
+        srcimg: pantalla,
+        textp: "Do you setup and isntall Windows, drivers, etc?",
+    }
+    ]
     const containerTitulo = {
         marginTop: "30px",
         paddingLeft: "50px",
@@ -23,23 +52,6 @@ const CommonQuestions = () => {
         marginTop: "40px",
         marginLeft: "140px"
     }
-    const filaLista = {
-        textAlign: "left",
-        display: "flex",
-        alignItems: "center",
-        width: "75%",
-        paddingLeft: "30px",
-        fontFamily: "Arial, Helvetica, sans-serif",
-        fontSize: "x-large"
-    }
-
-    const p = {
-        margin: "15px"
-    }
-    const icons_tabla = {
-        height: "30px",
-        width: "30px"
-    }
     const containerStyle = {
         width: "100%",
         marginLeft: "0px",
@@ -51,34 +63,13 @@ const CommonQuestions = () => {
             </Row>
             <Row style={containerOpciones}>
                 <ListGroup>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={refund} style={icons_tabla} alt=""></img>
-                        <p style={p}>Refund Policy</p>
-                    </ListGroup.Item>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={cancel} style={icons_tabla} alt=""></img>
-                        <p style={p}>Cancellation Policy</p>
-                    </ListGroup.Item>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={warranty} style={icons_tabla} alt=""></img>
-                        <p style={p}>Warranty Services</p>
-                    </ListGroup.Item>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={cash} style={icons_tabla} alt=""></img>
-                        <p style={p}>Financing</p>
-                    </ListGroup.Item>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={paquete} style={icons_tabla} alt=""></img>
-                        <p style={p}>How long will it take for my PC to arrive?</p>
-                    </ListGroup.Item>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={tierra} style={icons_tabla} alt=""></img>
-                        <p style={p}>Do you ship internationally?</p>
-                    </ListGroup.Item>
-                    <ListGroup.Item style={filaLista}>
-                        <img src={pantalla} style={icons_tabla} alt=""></img>
-                        <p style={p}>Do you setup and isntall Windows, drivers, etc?</p>
-                    </ListGroup.Item>
+                    <ListGroupq {...data[0]} />
+                    <ListGroupq {...data[1]} />
+                    <ListGroupq {...data[2]} />
+                    <ListGroupq {...data[3]} />
+                    <ListGroupq {...data[4]} />
+                    <ListGroupq {...data[5]} />
+                    <ListGroupq {...data[6]} />
                 </ListGroup>
             </Row>
         </Container>
