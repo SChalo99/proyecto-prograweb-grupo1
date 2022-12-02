@@ -1,10 +1,28 @@
-import { Card, Container, Row, Col } from "react-bootstrap"
-import headset from "../../assets/headset.png"
-import keyboard from "../../assets/keyboard.png"
-import mousepad from "../../assets/mousepad.png"
-import mousepadXL from "../../assets/mousepadXL.png"
+import { Container, Row, Col } from "react-bootstrap"
+import Cardt from "../Componetizar/PerifericCard"
 
 const RankingPeriferic = () => {
+    const data = [{
+        namep: "Headset",
+        srcimg: "img",
+        preciop: "$25"
+    },
+        {
+        namep: "Mouse & keyboards",
+        srcimg: "img/keyboard.png",
+        preciop: "$39"
+    },
+    {
+        namep: "Standard mouse pad",
+        srcimg: "img/mousepad.png",
+        text: "$19"
+    },
+    {
+        namep: "XL mouse pad",
+        srcimg: "img/mousepadXL.png",
+        text: "$29"
+    }
+    ]
     const container = {
         textAlign: "left",
         alignItems: "left",
@@ -20,39 +38,9 @@ const RankingPeriferic = () => {
         marginLeft: "65px",
         marginTop: "20px"
     }
-    const mystyle = {
-        width: "60px",
-        height: "60px",
-        padding: "1x"
-    };
-
-    const border = {
-        border: "1px solid black",
-        marginTop: "8px",
-    }
     const containerStyle = {
         width: "70%",
         marginLeft: "-50px"
-    }
-    const imagen = {
-        display: "flex",
-        width: "15%",
-        textAlign: "center",
-        alignItems: "center"
-    }
-    const nombre = {
-        textAlign: "left",
-        marginRight: "20px",
-        marginTop: "15px",
-        width: "75%",
-        alignItems: "center",
-        fontSize: "x-large"
-    }
-    const precio = {
-        textAlign: "left",
-        marginTop: "15px",
-        width: "15%",
-        fontSize: "x-large"
     }
 
     return (
@@ -65,86 +53,17 @@ const RankingPeriferic = () => {
                     <Row>
                         <Col>
                             <Row>
-                                <Card style={border}>
-                                    <Card.Body>
-                                        <Container>
-                                            <Row>
-                                                <Col style={imagen}>
-                                                    <img src={headset} alt="" style={mystyle}>
-                                                    </img>
-                                                </Col>
-                                                <Col xs={5} style={nombre}>
-                                                    <p>Headset</p>
-                                                </Col>
-                                                <Col style={precio}>
-                                                    <p>$25</p>
-                                                </Col>
-                                            </Row>
-                                        </Container>
-                                    </Card.Body>
-                                </Card>
+                                <Cardt {...data[0]} />
                             </Row>
                             <Row>
-                                <Card style={border}>
-                                    <Card.Body>
-                                        <Container>
-                                            <Row>
-                                                <Col style={imagen}>
-                                                    <img src={keyboard} alt="" style={mystyle}>
-                                                    </img>
-                                                </Col>
-                                                <Col xs={5} style={nombre}>
-                                                    <p>Mouse & keyboards</p>
-                                                </Col>
-                                                <Col style={precio}>
-                                                    <p>$39</p>
-                                                </Col>
-                                            </Row>
-                                        </Container>
-                                    </Card.Body>
-                                </Card>
+                                <Cardt {...data[1]} />
                             </Row>
                             <Row>
-                                <Card style={border}>
-                                    <Card.Body>
-                                        <Container>
-                                            <Row>
-                                                <Col style={imagen}>
-                                                    <img src={mousepad} alt="" style={mystyle}>
-                                                    </img>
-                                                </Col>
-                                                <Col xs={5} style={nombre}>
-                                                    <p>Standard mouse pad</p>
-                                                </Col>
-                                                <Col style={precio}>
-                                                    <p>$19</p>
-                                                </Col>
-                                            </Row>
-                                        </Container>
-                                    </Card.Body>
-                                </Card>
+                                <Cardt {...data[2]} />
                             </Row>
                             <Row>
-                                <Card style={border}>
-                                    <Card.Body>
-                                        <Container>
-                                            <Row>
-                                                <Col style={imagen}>
-                                                    <img src={mousepadXL} alt="" style={mystyle}>
-                                                    </img>
-                                                </Col>
-                                                <Col xs={5} style={nombre}>
-                                                    <p>XL mouse pad</p>
-                                                </Col>
-                                                <Col style={precio}>
-                                                    <p>$29</p>
-                                                </Col>
-                                            </Row>
-                                        </Container>
-                                    </Card.Body>
-                                </Card>
+                                <Cardt {...data[3]} />
                             </Row>
-                            
                         </Col>
                     </Row>
                 </Container>
