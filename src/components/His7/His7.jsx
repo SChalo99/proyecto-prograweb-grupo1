@@ -1,9 +1,10 @@
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import { useEffect } from 'react';
 
 
-const His7=(props)=>{
+const His7=(item)=>{
     const btnHome = {
         backgroundColor:"#c25be9",
         border: "none",
@@ -34,19 +35,21 @@ const His7=(props)=>{
             paddingTop: "5%",
         
         };
+
+    useEffect()
     return(
         <div style={pag7}>
             <Row>
                 <Col>
                     <div style={transparente}>
-                            {props.imagen}<br />
+                            <img src={item.imagen} alt="" /><br />
                             <button href="AdvancedBuilding" style={btnHome}>
                                 Add to the car
                             </button>
                     </div>
                 </Col>
                 <Col>
-                    {props.specs}
+                    {item.specs}
                 </Col>
             </Row>
         </div>
