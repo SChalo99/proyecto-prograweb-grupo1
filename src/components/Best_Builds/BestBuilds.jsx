@@ -72,55 +72,46 @@ const BestBuilds = () => {
     const productos = async () => {
         const productosresponse= await rankingbuilds.getAllArmado();
         setproducts(productosresponse.data)
-        let lista = [];
-        for (let i = 0; i < productos.length; i++) {
-            lista.push(await rankingbuilds.findProducto(i).data)
-        }
-        setelementos(lista)
     };
 
-    const  
-
-
-
     useEffect(() => {
-        idproductos()
+        productos()
     }, []);
 
-    const accordions = elementos.map((item) => {    
+    const accordions = productos.map((item) => {    
         return (
             <Accordion.Item eventKey={item.id} style={acordionpart}>
                 <Accordion.Header
                 ><Container>
                         <Row>
                             <Col style={imagen}>
-                                <img src={item.pcgamer} alt="" style={mystyle}>
+                                <img src={item.preArmado.description} alt="" style={mystyle}>
                                 </img>
                             </Col>
                             <Col xs={5} style={nombre}>
-                                {item.nampc}
+                                {item.preArmado.name}
                             </Col>
                             <Col style={precio}>
-                                {item.precipc}
+                                {item.products.price}
                             </Col>
                         </Row>
                     </Container>
                 </Accordion.Header>
                 <Accordion.Body style={partes}>
-                    {elementos.map} =>{}
+                    {item.products.map}
                     <ListGroup>
                         <ListGroup.Item style={filaLista}>
                             <Container>
                                 <Row>
                                     <Col style={imagen}>
-                                        <img src={item.description} alt="" style={mystyle}>
+                                        <img src={item.products.description} alt="" style={mystyle}>
                                         </img>
                                     </Col>
                                     <Col xs={5} style={nombre}>
-                                        {item.name}
+                                        {item.products.name}
                                     </Col>
                                     <Col style={precio}>
-                                        {item.price}
+                                        {item.products.price}
                                     </Col>
                                 </Row>
                             </Container>
@@ -129,11 +120,11 @@ const BestBuilds = () => {
                             <Container>
                                 <Row>
                                     <Col style={imagen}>
-                                        <img src={item.description} alt="" style={mystyle}>
+                                        <img src={item.products.description} alt="" style={mystyle}>
                                         </img>
                                     </Col>
                                     <Col xs={5} style={nombre}>
-                                        {item.graficname}
+                                        {item.products.name}
                                     </Col>
                                     <Col style={precio}>
                                         {item.graficprice}
