@@ -1,11 +1,11 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import "bootstrap/dist/css/bootstrap.css"
 import PC from "../../assets/pc_recomendada.png"
-import {graphic, processor, memory, storage, cooling, windows, psupply} from "../../modules/components.js"
+import { processor, memory, storage, cooling, windows, psupply} from "../../modules/components.js"
 import { useNavigate } from "react-router-dom"
-
-let itemsAComprar = []
-
+import productos_api from "../../api/productos.js"
+import {useParams} from "react-router-dom"
+import OrderProduct from "../../api/orderProduct"
 
 const CustomBuild = () => {
     //Styles
@@ -56,25 +56,20 @@ const CustomBuild = () => {
     //
 
     const navigate = useNavigate();
-    const [itemSelec, setitemSelect] = useState("graphic");
+    const [itemSelec, setitemSelect] = useState(3);
     const [precioComps, setprecioComps] = useState(0);
-    const alternarSelec = (itemSelec) => {
-        if (itemSelec === "graphic") {
-            return graphic;
-        } else if (itemSelec === "processor") {
-            return processor;
-        } else if (itemSelec === "memory") {
-            return memory;
-        } else if (itemSelec === "storage") {
-            return storage;
-        } else if (itemSelec === "cooling") {
-            return cooling;
-        } else if (itemSelec === "windows") {
-            return windows;
-        } else if (itemSelec === "psupply") {
-            return psupply;
-        }
+    const [products, setProducts] = useState([])
+    const [itemsAComprar, setItemsAComprar] = useState([])
+
+    async function getProducts(id) {
+        const newData = await productos_api.getAll(id)
+        setProducts(newData.data)
     }
+
+    useEffect(()=>{
+        getProducts(itemSelec)
+    },[])
+
     const crearTarjeta = (name,price,img, id) => {
         return <div className="bg-white tarjeta" style={tarjeta}>
             <img src={img} className="tarjetaimg" style={tarjetaimg} alt=""/>
@@ -92,20 +87,25 @@ const CustomBuild = () => {
             } style={tarjetabutton}>+</button>
         </div>
     }
-    const listarTarjetas = (itemSelec) => {
-        let arrComps = alternarSelec(itemSelec);
-        let tarjetas = arrComps.map( (comps) => {
-            return crearTarjeta(comps.name, comps.price, comps.img, comps.id)
+    const listarTarjetas =  () => {
+        const tarjetas = products.map((comps) => {
+            return crearTarjeta(comps.name, comps.price, comps.description, comps.id)
         });
         return tarjetas
     }
 
-    const agregarCompra = (name, price, img) => {
-        let comp = {}
-        comp.name = name
-        comp.price = price
-        comp.img = img
-        itemsAComprar.push(comp)
+    const {order_id} = useParams()
+
+    const agregarCompra = async (name, price, img, id) => {
+        
+        const body = {
+            order_id: parseInt({order_id}.order_id),
+            product_id: id
+        }
+        const newOrderProduct = await OrderProduct.create(body)
+        console.log(newOrderProduct)
+        const getOrderProducts = await OrderProduct.findProduct({order_id}.order_id)
+        setItemsAComprar(getOrderProducts.data)
     }
 
     const guardarOrden = () => {
@@ -115,7 +115,7 @@ const CustomBuild = () => {
         localStorage.setItem('ordenes',JSON.stringify(itemsAComprar))
     }
 
-    const crearTarjetaCompra = (name, price, img) => {
+    const crearTarjetaCompra = (name, price, img, id) => {
         return <div>
             <div className="bg-gradient tarjetacompra p-3" style={tarjetacompra}>
                 <img src={img} className="tarjetaimg" style={tarjetaimg} alt=""/>
@@ -132,7 +132,7 @@ const CustomBuild = () => {
 
     const listarTarjetasCompra = () => {
         let tarjetas = itemsAComprar.map( (comps) => {
-            return crearTarjetaCompra(comps.name, comps.price, comps.img)
+            return crearTarjetaCompra(comps.product.name, comps.product.price, comps.product.description, comps.product.id)
         });
         return tarjetas
     }
@@ -144,7 +144,7 @@ const CustomBuild = () => {
             </div>
             <div className="mb-5 col-6">
                 <button className="btn btn-light" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/home")}}>ATRÁS</button>
-                <button className="btn btn-success" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/productos"); guardarOrden()}}>
+                <button className="btn btn-success" style={{width: "125px", marginRight: "15px"}} onClick={()=>{navigate("/productos/"+{order_id}.order_id); guardarOrden()}}>
                     <i className="bi bi-cart-fill"></i> CARRITO
                 </button>
             </div>
@@ -171,15 +171,15 @@ const CustomBuild = () => {
             </div>
             <div className="col-sm-4">
                 <div className="row pb-5">
-                    <button className="col m-1 btn btn-success" style={{width: "25%"}} onClick={()=>setitemSelect("graphic")} id="graphic">Gráfica</button>
-                    <button className="col-2 m-1 btn btn-success" style={{width: "25%"}} onClick={()=>setitemSelect("processor")} id="processor">Procesador</button>
-                    <button className="col m-1 btn btn-success" style={{width: "25%"}} onClick={()=>setitemSelect("memory")} id="memory">Memoria</button>
-                    <button className="col-3 m-1 btn btn-success" style={{width: "40%"}} onClick={()=>setitemSelect("storage")} id="storage">Almacenamiento</button>
-                    <button className="col-1 m-1 btn btn-success" style={{width: "33%"}} onClick={()=>setitemSelect("cooling")} id="cooling">Ventilación</button>
-                    <button className="col-3 m-1 btn btn-success" style={{width: "30%"}} onClick={()=>setitemSelect("windows")} id="windows">Windows</button>
-                    <button className="col-3 m-1 btn btn-success" style={{width: "33%"}} onClick={()=>setitemSelect("psupply")} id="psupply">Fuente poder</button>
+                    <button className="col m-1 btn btn-success" style={{width: "25%"}} onClick={()=>getProducts(3)} id="graphic">Gráfica</button>
+                    <button className="col-2 m-1 btn btn-success" style={{width: "25%"}} onClick={()=>getProducts(4)} id="processor">Procesador</button>
+                    <button className="col m-1 btn btn-success" style={{width: "25%"}} onClick={()=>getProducts(5)} id="memory">Memoria</button>
+                    <button className="col-3 m-1 btn btn-success" style={{width: "40%"}} onClick={()=>getProducts(6)} id="storage">Almacenamiento</button>
+                    <button className="col-1 m-1 btn btn-success" style={{width: "33%"}} onClick={()=>getProducts(7)} id="cooling">Ventilación</button>
+                    <button className="col-3 m-1 btn btn-success" style={{width: "30%"}} onClick={()=>getProducts(8)} id="windows">Windows</button>
+                    <button className="col-3 m-1 btn btn-success" style={{width: "33%"}} onClick={()=>getProducts(9)} id="psupply">Fuente poder</button>
                 </div>
-                {listarTarjetas(itemSelec)}
+                {listarTarjetas()}
             </div>
 
             <div className="col-sm-4">

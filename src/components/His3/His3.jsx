@@ -1,5 +1,6 @@
 import {Container} from "react-bootstrap"
 import { useNavigate } from "react-router-dom"
+import Order from "../../api/order.js";
 
 const His3=()=>{
 
@@ -33,6 +34,20 @@ const His3=()=>{
         marginLeft: "15px",
         marginBottom: "20px",
     };
+    
+    const handleOnClick = async () => {
+        const body = {
+            amount: 0,
+            direction: "",
+            date: null,
+            user_id: sessionStorage.getItem("user_id")
+        }
+
+        const order = await Order.create(body)
+        console.log(order.data.id)
+        navigate("/custom/"+order.data.id)
+    }
+
     return(
             <Container>
             <div style={His3div}>
@@ -41,7 +56,7 @@ const His3=()=>{
             </div>
             <div style={His3div}>
             <button type="button" style={btnHome} onClick={()=>{navigate("/bbeginers")}}>Build for begginers </button>
-            <button type="button" style={btnHome} onClick={()=>{navigate("/custom")}}>Advanced building </button>
+            <button type="button" style={btnHome} onClick={()=>{handleOnClick()}}>Advanced building </button>
 
       </div>
         </Container>

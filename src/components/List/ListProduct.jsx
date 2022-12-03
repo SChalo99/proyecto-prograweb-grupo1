@@ -3,6 +3,7 @@ import { TrashButton, ShoppingButton } from "../Buttons"
 import shoppingCart from "../../api/shoppingCarItems";
 import { useState, useEffect} from 'react';
 import { useParams } from "react-router-dom";
+import OrderProduct from "../../api/orderProduct"
 
 const ListProduct = () => {
 
@@ -26,25 +27,20 @@ const ListProduct = () => {
         color: "white"
     }
     //DATA
-    const [data2, updateData] = useState([]);
-    let {id} = useParams()
+    const [data, updateData] = useState([]);
+    const {order_id} = useParams()
 
     const loadData = async() =>{
-        const productos = await shoppingCart.getAll({id})
-        updateData(productos)
+        const productos = await OrderProduct.findProduct({order_id}.order_id)
+        updateData(productos.data)
     }
 
     useEffect(()=>{
         loadData()
     },[])
 
-    async function handleRemoveItem (id) {
-        const remove = await shoppingCart.remove(id)
-        console.log(remove)
-        loadData();
-      };
     
-    const products = data2.map((item) => {
+    const products = data.map((item) => {
         return (
             <Row key={item.id}>
                 <Card style={border}>
@@ -52,17 +48,21 @@ const ListProduct = () => {
                         <Container>
                             <Row>
                                 <Col>
-                                    <img src={item.description} alt="" style={mystyle}>
+                                    <img src={item.product.description} alt="" style={mystyle}>
                                     </img>
                                 </Col>
                                 <Col xs={5}>
-                                    <p>{item.name}</p>
+                                    <p>{item.product.name}</p>
                                 </Col>
                                 <Col>
-                                    <p>${item.price}</p>
+                                    <p>${item.product.price}</p>
                                 </Col>
                                 <Col>
-                                    <TrashButton item={item} onRemove={handleRemoveItem(item.id)} />
+                                    <TrashButton item={item} onRemove={async (id) =>{
+        const remove = await shoppingCart.remove(id)
+        console.log(remove)
+        loadData()
+      }} />
                                 </Col>
                             </Row>
                         </Container>

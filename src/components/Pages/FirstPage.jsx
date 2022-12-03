@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
+import User from "../../api/user.js"
 
 const FirstPage = () => {
     const [firstname, setFirstName] = useState("")
@@ -9,9 +10,19 @@ const FirstPage = () => {
 
     const navigate = useNavigate();
 
-    const createOnClick = () => {
+    const createOnClick = async () => {
         if (firstname !== "" && lastname !== "" && email !== "" && password !== "") {
+            const body ={
+                name: firstname,
+                lastname: lastname,
+                email: email,
+                password: password,
+            }
+            const newUser = await User.create(body)
+            console.log(newUser)
             navigate("/login")
+        }else{
+            navigate("/signup")
         }
     }
 

@@ -26,7 +26,7 @@ const SideBar = () => {
                 <ListGroup.Item action eventKey='#link2' href="#link2">
                   Profile Info
                 </ListGroup.Item>
-                <ListGroup.Item action href="/login">
+                <ListGroup.Item action href="/login" onClick={()=>{sessionStorage.removeItem("user_id")}}>
                   Logout
                 </ListGroup.Item>
               </ListGroup>

@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import { useState } from "react"
+import User from "../../api/user.js"
 
 
 const SecondPage = () => {
@@ -11,9 +12,16 @@ const SecondPage = () => {
         navigate("/signup")
     }
 
-    const logInOnclick = () => {
+    const logInOnclick = async () => {
         if (email !== "" && password !== "") {
-            navigate("/home")
+            const user = await User.login(email,password);
+            if(!user){
+                navigate("/login")
+            }else{
+                sessionStorage.setItem("user_id", user.data[0].id)
+                navigate("/home")
+            }
+            
         }
     }
 
