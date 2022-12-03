@@ -68,7 +68,7 @@ const OptimizePage = () => {
     const products = productos.map(item => {
         return (
             <Row key={item[0].id}>
-                <Col >
+                <Col>
                     <Card.Body style={borderBottom}>
                         <Container>
                             <Row>

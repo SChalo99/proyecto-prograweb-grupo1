@@ -1,7 +1,8 @@
 import { Card, Col, Container, Row } from "react-bootstrap"
 import { TrashButton, ShoppingButton } from "../Buttons"
-import data from "./data"
-import { useState } from 'react';
+import shoppingCart from "../../api/shoppingCarItems";
+import { useState, useEffect} from 'react';
+import { useParams } from "react-router-dom";
 
 const ListProduct = () => {
 
@@ -25,10 +26,22 @@ const ListProduct = () => {
         color: "white"
     }
     //DATA
-    const [data2, updateData] = useState(data);
-    function handleRemoveItem (id) {
-        const newList = data2.filter((item) => item.id !== id);
-        updateData(newList);
+    const [data2, updateData] = useState([]);
+    let {id} = useParams()
+
+    const loadData = async() =>{
+        const productos = await shoppingCart.getAll({id})
+        updateData(productos)
+    }
+
+    useEffect(()=>{
+        loadData()
+    },[])
+
+    async function handleRemoveItem (id) {
+        const remove = await shoppingCart.remove(id)
+        console.log(remove)
+        loadData();
       };
     
     const products = data2.map((item) => {
@@ -39,17 +52,17 @@ const ListProduct = () => {
                         <Container>
                             <Row>
                                 <Col>
-                                    <img src={item.image} alt="" style={mystyle}>
+                                    <img src={item.description} alt="" style={mystyle}>
                                     </img>
                                 </Col>
                                 <Col xs={5}>
                                     <p>{item.name}</p>
                                 </Col>
                                 <Col>
-                                    <p>{item.price}</p>
+                                    <p>${item.price}</p>
                                 </Col>
                                 <Col>
-                                    <TrashButton item={item} onRemove={handleRemoveItem} />
+                                    <TrashButton item={item} onRemove={handleRemoveItem(item.id)} />
                                 </Col>
                             </Row>
                         </Container>

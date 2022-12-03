@@ -2,12 +2,12 @@ import axios from 'axios'
  
 const post = async (request) => {
     return await axios
-        .post('http://localhost:3001/formulario',request);
+        .post('http://localhost:3001/report',request);
 }
  
 const getAll = async () => {
     return await axios
-        .getAll('http://localhost:3001/forulario/getAll');
+        .getAll('http://localhost:3001/report/getAll');
 }
  
 const formulario = { post, getAll }
