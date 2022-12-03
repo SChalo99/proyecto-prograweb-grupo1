@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const getAll = async () => {
     return await axios
-        .get('http://localhost:3001/periferic');
+        .get(`${process.env.NODE_ENV}/periferic`);
 }
 
 const rankingperifericos = { getAll }

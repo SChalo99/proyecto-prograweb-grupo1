@@ -2,10 +2,10 @@ import axios from 'axios'
 
 const getAllArmado = async () => {
     return await axios
-        .get('http://localhost:3001/preArmado');
+        .get(`${process.env.NODE_ENV}/preArmado`);
 }
 const findProducto = async () => {
-    return await axios.get(`http://localhost:3001/preArmado/`)
+    return await axios.get(`${process.env.NODE_ENV}/preArmado/`)
 }
 
 

@@ -2,7 +2,7 @@ import axios from 'axios'
  
 const getAll = async (id) => {
     return await axios
-        .get(`http://localhost:3001/product/${id}`);
+        .get(`${process.env.NODE_ENV}/product/${id}`);
 }
  
 const productos_api = { getAll }
