@@ -1,10 +1,14 @@
 import axios from 'axios'
 
-const getAll = async () => {
+const getAllArmado = async () => {
     return await axios
-        .getAll('http://localhost:3001/rankingbuilds/getAll');
+        .get('http://localhost:3001/preArmado');
+}
+const findProducto = async (productId) => {
+    return await axios.get(`http://localhost:3001/preArmadoProducto/${productId}`)
 }
 
-const rankingbuilds = { getAll }
+
+const rankingbuilds = { getAllArmado, findProducto, getAllProduct }
 
 export default rankingbuilds

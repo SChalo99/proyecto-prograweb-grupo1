@@ -1,139 +1,8 @@
-import { Accordion, Container, Row } from "react-bootstrap"
-import Accordiont from "../Componetizar/AccordionBuild"
-
+import { ListGroup, Accordion, Container, Row, Col } from "react-bootstrap"
+import data from "./data"
+import { useState, useEffect } from 'react';
+import rankingbuilds from '../../api/rankingbuilds.js'
 const BestBuilds = () => {
-        const data = [{
-            eventk: "0",
-            pcgamer: "img/pcgamer.png",
-            nampc: "Monster PC",
-            precipc: "$1889",
-            intelcore: "img/intelcore.png",
-            corename: "Intel Core I9-12700F 12-Core",
-            coreprice: "$339",
-            nvidia2: "img/nvidia2.png",
-            graficname: "NVIDIA geforce RTX 3070 8GB (VR READY)",
-            graficprice: "$599",
-            DDR4: "img/DDR4.png",
-            DDR4name: "16GB DDR4 dual channel",
-            DDR4price: "$79",
-            SSD: "img/SSD.png",
-            SSDname: "1TB NVME M.2",
-            SSDprice: "$99",
-            cool: "img/cool.png",
-            coolname: "CM MasterLiquid ML240L",
-            coolprice: "$99",
-            fan: "img/fan.png",
-            fanname: "QTY 4X CM MasterFans RGB",
-            fanprice: "$49",
-            gamercase: "img/pcgamer.",
-            gamercasename: "Cooler Master TD5000 RGB",
-            gamercaseprice: "$129",
-            fuente: "img/fuente.png",
-            fuentename: "700W ATX 80 Plus Gold",
-            fuenteprice: "$89",
-            motherb: "img/motherb.png",
-            motherbname: "Asus B660 Series | Intel",
-            motherbprice: "$149"
-        },
-        {
-            eventk: "1",
-            pcgamer: "img/pcgamer.png",
-            nampc: "Cruiser Build",
-            precipc: "$1759",
-            intelcore: "img/intelcore.png",
-            corename: "Intel Core I9-12700F 12-Core",
-            coreprice: "$339",
-            nvidia2: "img/nvidia2.png",
-            graficname: "NVIDIA geforce RTX 3070 8GB (VR READY)",
-            graficprice: "$599",
-            DDR4: "img/DDR4.png",
-            DDR4name: "16GB DDR4 dual channel",
-            DDR4price: "$79",
-            SSD: "img/SSD.png",
-            SSDname: "1TB NVME M.2",
-            SSDprice: "$99",
-            cool: "img/cool.png",
-            coolname: "CM MasterLiquid ML240L",
-            coolprice: "$99",
-            fan: "img/fan.png",
-            fanname: "QTY 4X CM MasterFans RGB",
-            fanprice: "$49",
-            gamercase: "img/pcgamer.",
-            gamercasename: "Cooler Master TD5000 RGB",
-            gamercaseprice: "$129",
-            fuente: "img/fuente.png",
-            fuentename: "700W ATX 80 Plus Gold",
-            fuenteprice: "$89",
-            motherb: "img/motherb.png",
-            motherbname: "Asus B660 Series | Intel",
-            motherbprice: "$149"
-        },
-        {
-            eventk: "2",
-            pcgamer: "img/pcgamer.png",
-            nampc: "Nasa PC",
-            precipc: "$1679",
-            intelcore: "img/intelcore.png",
-            corename: "Intel Core I9-12700F 12-Core",
-            coreprice: "$339",
-            nvidia2: "img/nvidia2.png",
-            graficname: "NVIDIA geforce RTX 3070 8GB (VR READY)",
-            graficprice: "$599",
-            DDR4: "img/DDR4.png",
-            DDR4name: "16GB DDR4 dual channel",
-            DDR4price: "$79",
-            SSD: "img/SSD.png",
-            SSDname: "1TB NVME M.2",
-            SSDprice: "$99",
-            cool: "img/cool.png",
-            coolname: "CM MasterLiquid ML240L",
-            coolprice: "$99",
-            fan: "img/fan.png",
-            fanname: "QTY 4X CM MasterFans RGB",
-            fanprice: "$49",
-            gamercase: "img/pcgamer.",
-            gamercasename: "Cooler Master TD5000 RGB",
-            gamercaseprice: "$129",
-            fuente: "img/fuente.png",
-            fuentename: "700W ATX 80 Plus Gold",
-            fuenteprice: "$89",
-            motherb: "img/motherb.png",
-            motherbname: "Asus B660 Series | Intel",
-            motherbprice: "$149"
-        },
-        {
-            eventk: "3",
-            pcgamer: "img/pcgamer.png",
-            nampc: "Budget Build",
-            precipc: "$1299",
-            intelcore: "img/intelcore.png",
-            corename: "Intel Core I9-12700F 12-Core",
-            coreprice: "$339",
-            nvidia2: "img/nvidia2.png",
-            graficname: "NVIDIA geforce RTX 3070 8GB (VR READY)",
-            graficprice: "$599",
-            DDR4: "img/DDR4.png",
-            DDR4name: "16GB DDR4 dual channel",
-            DDR4price: "$79",
-            SSD: "img/SSD.png",
-            SSDname: "1TB NVME M.2",
-            SSDprice: "$99",
-            cool: "img/cool.png",
-            coolname: "CM MasterLiquid ML240L",
-            coolprice: "$99",
-            fan: "img/fan.png",
-            fanname: "QTY 4X CM MasterFans RGB",
-            fanprice: "$49",
-            gamercase: "img/pcgamer.",
-            gamercasename: "Cooler Master TD5000 RGB",
-            gamercaseprice: "$129",
-            fuente: "img/fuente.png",
-            fuentename: "700W ATX 80 Plus Gold",
-            fuenteprice: "$89",
-            motherb: "img/motherb.png",
-            motherbname: "Asus B660 Series | Intel",
-            motherbprice: "$149"
-        }]
     const container = {
         textAlign: "left",
         alignItems: "left",
@@ -151,6 +20,245 @@ const BestBuilds = () => {
         height: "100%",
         border: "none"
     }
+    const mystyle = {
+        width: "60px",
+        height: "60px",
+        padding: "1x"
+    };
+    const imagen = {
+        display: "flex",
+        width: "15%",
+        textAlign: "center",
+        alignItems: "center"
+    }
+    const nombre = {
+        marginRight: "20px",
+        marginTop: "15px",
+        width: "75%",
+        textAlign: "left",
+        alignItems: "center",
+        fontSize: "x-large"
+    }
+    const precio = {
+        textAlign: "left",
+        marginTop: "15px",
+        width: "15%",
+        fontSize: "x-large"
+    }
+    const filaLista = {
+        textAlign: "left",
+        display: "flex",
+        alignItems: "center",
+        width: "75%",
+        paddingLeft: "30px",
+        fontFamily: "Arial, Helvetica, sans-serif",
+        fontSize: "x-large",
+        backgroundImage: "linear-gradient(180deg, blue 10%, green 100%)",
+        color: "white"
+    }
+    const acordionpart = {
+        border: "none",
+        marginTop: "10px"
+    }
+    const partes = {
+        padding: "0px",
+        backgroundColor: "#282c34",
+        border: "none"
+    }
+    const [elementos, setelementos] = useState([]);
+    const [products, setproducts] = useState([]);
+    const [idproductos, setidproductos] = useState([]);
+
+    const productos = async () => {
+        const productosresponse= await rankingbuilds.getAllArmado();
+        setproducts(productosresponse.data)
+        let lista = [];
+        for (let i = 0; i < productos.length; i++) {
+            lista.push(await rankingbuilds.findProducto(i).data)
+        }
+        setelementos(lista)
+    };
+
+    const  
+
+
+
+    useEffect(() => {
+        idproductos()
+    }, []);
+
+    const accordions = elementos.map((item) => {    
+        return (
+            <Accordion.Item eventKey={item.id} style={acordionpart}>
+                <Accordion.Header
+                ><Container>
+                        <Row>
+                            <Col style={imagen}>
+                                <img src={item.pcgamer} alt="" style={mystyle}>
+                                </img>
+                            </Col>
+                            <Col xs={5} style={nombre}>
+                                {item.nampc}
+                            </Col>
+                            <Col style={precio}>
+                                {item.precipc}
+                            </Col>
+                        </Row>
+                    </Container>
+                </Accordion.Header>
+                <Accordion.Body style={partes}>
+                    {elementos.map} =>{}
+                    <ListGroup>
+                        <ListGroup.Item style={filaLista}>
+                            <Container>
+                                <Row>
+                                    <Col style={imagen}>
+                                        <img src={item.description} alt="" style={mystyle}>
+                                        </img>
+                                    </Col>
+                                    <Col xs={5} style={nombre}>
+                                        {item.name}
+                                    </Col>
+                                    <Col style={precio}>
+                                        {item.price}
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </ListGroup.Item>
+                        <ListGroup.Item style={filaLista}>
+                            <Container>
+                                <Row>
+                                    <Col style={imagen}>
+                                        <img src={item.description} alt="" style={mystyle}>
+                                        </img>
+                                    </Col>
+                                    <Col xs={5} style={nombre}>
+                                        {item.graficname}
+                                    </Col>
+                                    <Col style={precio}>
+                                        {item.graficprice}
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </ListGroup.Item>
+                        <ListGroup.Item style={filaLista}>
+                            <Container>
+                                <Row>
+                                    <Col style={imagen}>
+                                        <img src={item.DDR4} alt="" style={mystyle}>
+                                        </img>
+                                    </Col>
+                                    <Col xs={5} style={nombre}>
+                                        {item.DDR4name}
+                                    </Col>
+                                    <Col style={precio}>
+                                        {item.DDR4price}
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </ListGroup.Item>
+                        <ListGroup.Item style={filaLista}>
+                            <Container>
+                                <Row>
+                                    <Col style={imagen}>
+                                        <img src={item.SSD} alt="" style={mystyle}>
+                                        </img>
+                                    </Col>
+                                    <Col xs={5} style={nombre}>
+                                        {item.SSDname}
+                                    </Col>
+                                    <Col style={precio}>
+                                        {item.SSDprice}
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </ListGroup.Item>
+                        <ListGroup.Item style={filaLista}>
+                            <Container>
+                                <Row>
+                                    <Col style={imagen}>
+                                        <img src={item.cool} alt="" style={mystyle}>
+                                        </img>
+                                    </Col>
+                                    <Col xs={5} style={nombre}>
+                                        {item.coolname}
+                                    </Col>
+                                    <Col style={precio}>
+                                        {item.coolprice}
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </ListGroup.Item>
+                        <ListGroup.Item style={filaLista}>
+                            <Container>
+                                <Row>
+                                    <Col style={imagen}>
+                                        <img src={item.fan} alt="" style={mystyle}>
+                                        </img>
+                                    </Col>
+                                    <Col xs={5} style={nombre}>
+                                        {item.fanname}
+                                    </Col>
+                                    <Col style={precio}>
+                                        {item.fanprice}
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </ListGroup.Item>
+                        <ListGroup.Item style={filaLista}>
+                            <Container>
+                                <Row>
+                                    <Col style={imagen}>
+                                        <img src={item.gamercase} alt="" style={mystyle}>
+                                        </img>
+                                    </Col>
+                                    <Col xs={5} style={nombre}>
+                                        {item.gamercasename}
+                                    </Col>
+                                    <Col style={precio}>
+                                        {item.gamercaseprice}
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </ListGroup.Item>
+                        <ListGroup.Item style={filaLista}>
+                            <Container>
+                                <Row>
+                                    <Col style={imagen}>
+                                        <img src={item.fuente} alt="" style={mystyle}>
+                                        </img>
+                                    </Col>
+                                    <Col xs={5} style={nombre}>
+                                        {item.fuentename}
+                                    </Col>
+                                    <Col style={precio}>
+                                        {item.fuenteprice}
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </ListGroup.Item>
+                        <ListGroup.Item style={filaLista}>
+                            <Container>
+                                <Row>
+                                    <Col style={imagen}>
+                                        <img src={item.motherb} alt="" style={mystyle}>
+                                        </img>
+                                    </Col>
+                                    <Col xs={5} style={nombre}>
+                                        {item.motherbname}
+                                    </Col>
+                                    <Col style={precio}>
+                                        {item.motherbprice}
+                                    </Col>
+                                </Row>
+                            </Container>
+                        </ListGroup.Item>
+                    </ListGroup>
+                    
+                </Accordion.Body>
+            </Accordion.Item>
+        )
+    });
     return (
         <Container style={container}>
             <Row style={containerTitulo}>
@@ -158,14 +266,11 @@ const BestBuilds = () => {
             </Row>
             <Row>
                 <Accordion defaultActiveKey="0" style={acordion}>
-                    <Accordiont {...data[0]} />
-                    <Accordiont {...data[1]} />
-                    <Accordiont {...data[2]} />
-                    <Accordiont {...data[3]} />
+                    {accordions}
                 </Accordion>
             </Row>
         </Container>
-    )
+    );
 }
 
 export default BestBuilds
