@@ -1,5 +1,4 @@
 import { ListGroup, Accordion, Container, Row, Col } from "react-bootstrap"
-import data from "./data"
 import { useState, useEffect } from 'react';
 import rankingbuilds from '../../api/rankingbuilds.js'
 const BestBuilds = () => {
@@ -65,187 +64,64 @@ const BestBuilds = () => {
         backgroundColor: "#282c34",
         border: "none"
     }
-    const [elementos, setelementos] = useState([]);
+
     const [products, setproducts] = useState([]);
-    const [idproductos, setidproductos] = useState([]);
 
     const productos = async () => {
-        const productosresponse= await rankingbuilds.getAllArmado();
+        const productosresponse = await rankingbuilds.getAllArmado();
         setproducts(productosresponse.data)
+        console.log(products)
     };
 
     useEffect(() => {
         productos()
+
     }, []);
 
-    const accordions = productos.map((item) => {    
+    const accordions = products.map((item) => {
         return (
             <Accordion.Item eventKey={item.id} style={acordionpart}>
                 <Accordion.Header
                 ><Container>
                         <Row>
                             <Col style={imagen}>
-                                <img src={item.preArmado.description} alt="" style={mystyle}>
+                                <img src={item.description} alt="" style={mystyle}>
                                 </img>
                             </Col>
                             <Col xs={5} style={nombre}>
-                                {item.preArmado.name}
+                                {item.name}
                             </Col>
                             <Col style={precio}>
-                                {item.products.price}
+                                {item.price}
                             </Col>
                         </Row>
                     </Container>
                 </Accordion.Header>
                 <Accordion.Body style={partes}>
-                    {item.products.map}
                     <ListGroup>
-                        <ListGroup.Item style={filaLista}>
-                            <Container>
-                                <Row>
-                                    <Col style={imagen}>
-                                        <img src={item.products.description} alt="" style={mystyle}>
-                                        </img>
-                                    </Col>
-                                    <Col xs={5} style={nombre}>
-                                        {item.products.name}
-                                    </Col>
-                                    <Col style={precio}>
-                                        {item.products.price}
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </ListGroup.Item>
-                        <ListGroup.Item style={filaLista}>
-                            <Container>
-                                <Row>
-                                    <Col style={imagen}>
-                                        <img src={item.products.description} alt="" style={mystyle}>
-                                        </img>
-                                    </Col>
-                                    <Col xs={5} style={nombre}>
-                                        {item.products.name}
-                                    </Col>
-                                    <Col style={precio}>
-                                        {item.graficprice}
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </ListGroup.Item>
-                        <ListGroup.Item style={filaLista}>
-                            <Container>
-                                <Row>
-                                    <Col style={imagen}>
-                                        <img src={item.DDR4} alt="" style={mystyle}>
-                                        </img>
-                                    </Col>
-                                    <Col xs={5} style={nombre}>
-                                        {item.DDR4name}
-                                    </Col>
-                                    <Col style={precio}>
-                                        {item.DDR4price}
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </ListGroup.Item>
-                        <ListGroup.Item style={filaLista}>
-                            <Container>
-                                <Row>
-                                    <Col style={imagen}>
-                                        <img src={item.SSD} alt="" style={mystyle}>
-                                        </img>
-                                    </Col>
-                                    <Col xs={5} style={nombre}>
-                                        {item.SSDname}
-                                    </Col>
-                                    <Col style={precio}>
-                                        {item.SSDprice}
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </ListGroup.Item>
-                        <ListGroup.Item style={filaLista}>
-                            <Container>
-                                <Row>
-                                    <Col style={imagen}>
-                                        <img src={item.cool} alt="" style={mystyle}>
-                                        </img>
-                                    </Col>
-                                    <Col xs={5} style={nombre}>
-                                        {item.coolname}
-                                    </Col>
-                                    <Col style={precio}>
-                                        {item.coolprice}
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </ListGroup.Item>
-                        <ListGroup.Item style={filaLista}>
-                            <Container>
-                                <Row>
-                                    <Col style={imagen}>
-                                        <img src={item.fan} alt="" style={mystyle}>
-                                        </img>
-                                    </Col>
-                                    <Col xs={5} style={nombre}>
-                                        {item.fanname}
-                                    </Col>
-                                    <Col style={precio}>
-                                        {item.fanprice}
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </ListGroup.Item>
-                        <ListGroup.Item style={filaLista}>
-                            <Container>
-                                <Row>
-                                    <Col style={imagen}>
-                                        <img src={item.gamercase} alt="" style={mystyle}>
-                                        </img>
-                                    </Col>
-                                    <Col xs={5} style={nombre}>
-                                        {item.gamercasename}
-                                    </Col>
-                                    <Col style={precio}>
-                                        {item.gamercaseprice}
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </ListGroup.Item>
-                        <ListGroup.Item style={filaLista}>
-                            <Container>
-                                <Row>
-                                    <Col style={imagen}>
-                                        <img src={item.fuente} alt="" style={mystyle}>
-                                        </img>
-                                    </Col>
-                                    <Col xs={5} style={nombre}>
-                                        {item.fuentename}
-                                    </Col>
-                                    <Col style={precio}>
-                                        {item.fuenteprice}
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </ListGroup.Item>
-                        <ListGroup.Item style={filaLista}>
-                            <Container>
-                                <Row>
-                                    <Col style={imagen}>
-                                        <img src={item.motherb} alt="" style={mystyle}>
-                                        </img>
-                                    </Col>
-                                    <Col xs={5} style={nombre}>
-                                        {item.motherbname}
-                                    </Col>
-                                    <Col style={precio}>
-                                        {item.motherbprice}
-                                    </Col>
-                                </Row>
-                            </Container>
-                        </ListGroup.Item>
+                        {item.prearmadoproductos.map((producto) => {
+                            return (
+                                <ListGroup.Item style={filaLista}>
+                                    <Container>
+                                        <Row>
+                                            <Col style={imagen}>
+                                                <img src={producto.product.description} alt="" style={mystyle}>
+                                                </img>
+                                            </Col>
+                                            <Col xs={5} style={nombre}>
+                                                {producto.product.name}
+                                            </Col>
+                                            <Col style={precio}>
+                                                ${producto.product.price}
+                                            </Col>
+                                        </Row>
+                                    </Container>
+                                </ListGroup.Item>
+                            )
+                        })}
+
                     </ListGroup>
-                    
+
                 </Accordion.Body>
             </Accordion.Item>
         )

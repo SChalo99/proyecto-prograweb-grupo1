@@ -4,11 +4,11 @@ const getAllArmado = async () => {
     return await axios
         .get('http://localhost:3001/preArmado');
 }
-const findProducto = async (productId) => {
-    return await axios.get(`http://localhost:3001/preArmadoProducto/${productId}`)
+const findProducto = async () => {
+    return await axios.get(`http://localhost:3001/preArmado/`)
 }
 
 
-const rankingbuilds = { getAllArmado, findProducto, getAllProduct }
+const rankingbuilds = { getAllArmado, findProducto }
 
 export default rankingbuilds
