@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react"
 import "bootstrap/dist/css/bootstrap.css"
 import PC from "../../assets/pc_recomendada.png"
-import { processor, memory, storage, cooling, windows, psupply} from "../../modules/components.js"
 import { useNavigate } from "react-router-dom"
 import productos_api from "../../api/productos.js"
 import {useParams} from "react-router-dom"
@@ -56,7 +55,6 @@ const CustomBuild = () => {
     //
 
     const navigate = useNavigate();
-    const [itemSelec, setitemSelect] = useState(3);
     const [precioComps, setprecioComps] = useState(0);
     const [products, setProducts] = useState([])
     const [itemsAComprar, setItemsAComprar] = useState([])
@@ -67,7 +65,7 @@ const CustomBuild = () => {
     }
 
     useEffect(()=>{
-        getProducts(itemSelec)
+        getProducts(3)
     },[])
 
     const crearTarjeta = (name,price,img, id) => {
