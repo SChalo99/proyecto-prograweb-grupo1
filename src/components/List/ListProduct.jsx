@@ -37,7 +37,7 @@ const ListProduct = () => {
 
     useEffect(()=>{
         loadData()
-    },[])
+    })
 
     
     const products = data.map((item) => {
