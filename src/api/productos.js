@@ -2,7 +2,7 @@ import axios from 'axios'
  
 const getAll = async (id) => {
     return await axios
-        .get(`${process.env.BACKEND}/product/${id}`);
+        .get(`${process.env.REACT_APP_BACKEND}/product/${id}`);
 }
  
 const productos_api = { getAll }
