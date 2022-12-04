@@ -1,7 +1,6 @@
 
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import { useEffect } from 'react';
 
 
 const His7=(item)=>{
@@ -35,8 +34,6 @@ const His7=(item)=>{
             paddingTop: "5%",
         
         };
-
-    useEffect()
     return(
         <div style={pag7}>
             <Row>

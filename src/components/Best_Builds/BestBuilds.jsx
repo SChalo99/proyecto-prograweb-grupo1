@@ -76,7 +76,7 @@ const BestBuilds = () => {
     useEffect(() => {
         productos()
 
-    }, []);
+    });
 
     const accordions = products.map((item) => {
         return (
