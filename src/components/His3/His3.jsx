@@ -40,7 +40,7 @@ const His3=()=>{
             amount: 0,
             direction: "",
             date: null,
-            user_id: sessionStorage.getItem("user_id")
+            user_id: parseInt(sessionStorage.getItem("user_id"))
         }
 
         const order = await Order.create(body)
