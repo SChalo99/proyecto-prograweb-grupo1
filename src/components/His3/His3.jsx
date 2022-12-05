@@ -39,7 +39,6 @@ const His3=()=>{
         const body = {
             amount: 0,
             direction: "",
-            date: null,
             user_id: parseInt(sessionStorage.getItem("user_id"))
         }
 
