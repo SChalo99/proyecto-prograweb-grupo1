@@ -2,7 +2,10 @@ import { Container, Col, Row } from 'react-bootstrap'
 import { BackButton, ShoppingButton } from "../Buttons"
 import cooler from "../../assets/cooler.png"
 import Card from 'react-bootstrap/Card';
-import data from './data'
+import { useState, useEffect } from 'react';
+import productos_api from '../../api/productos';
+import OrderProduct from "../../api/orderProduct";
+import { useParams } from 'react-router-dom';
 
 const OptimizePage = () => {
     //Styles
@@ -51,9 +54,22 @@ const OptimizePage = () => {
         color: "white"
     }
     //Data
+    const [data, setData] = useState([]);
+
+    const { order_id } = useParams()
+    const loadData = async () => {
+        const optimized = await productos_api.getOptimized()
+        setData(optimized.data)
+    }
+    
+    useEffect(() => {
+        loadData()
+    }, [])
 
     var productos = []
     var parejas = []
+    var price = 0
+
     for (var i = 0; i <= data.length; i++) {
         if (parejas.length <= 1) {
             parejas.push(data[i])
@@ -63,8 +79,17 @@ const OptimizePage = () => {
             parejas.push(data[i])
         }
     }
-    console.log(data.length)
-    console.log(productos)
+
+    data.map(async item => {
+        price = item.price + price
+        const body = {
+            order_id: parseInt({ order_id }.order_id),
+            product_id: item.id
+        }
+        const newOrderProduct = await OrderProduct.create(body)
+        console.log(newOrderProduct)
+    })
+
     const products = productos.map(item => {
         return (
             <Row key={item[0].id}>
@@ -132,7 +157,7 @@ const OptimizePage = () => {
                                                 <p>Component price</p>
                                             </Row>
                                             <Row>
-                                                <h4>$ 1899</h4>
+                                                <h4>$ {price}</h4>
                                             </Row>
                                         </Col>
                                         <Col>

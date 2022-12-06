@@ -1,6 +1,7 @@
 import React from "react"
 import "bootstrap/dist/css/bootstrap.css"
 import { useNavigate } from "react-router-dom"
+import Order from "../../api/order"
 
 const BuildBeginers = () => {
     const navigate = useNavigate();
@@ -25,7 +26,17 @@ const BuildBeginers = () => {
         color: "white"
     }
 
+    const handleOnClick = async () => {
+        const body = {
+            amount: 0,
+            direction: "",
+            user_id: parseInt(sessionStorage.getItem("user_id"))
+        }
 
+        const order = await Order.create(body)
+        console.log(order.data.id)
+        navigate("/optimized/"+order.data.id)
+    }
 
     return <div className="bg-dark">
         <div className="container" style={{ textAlign: "center" }}>
@@ -34,7 +45,7 @@ const BuildBeginers = () => {
             </div>
             <div className="mb-5" style={{ width: "50%", float: "right"}}>
                 <button className="btn btn-light" style={{ width: "125px", marginRight: "15px" }} onClick={()=>{navigate("/home")}}>ATRÁS</button>
-                <button className="btn btn-success" style={{ width: "125px", marginLeft: "15px" }} onClick={()=>{navigate("/optimized")}}>SIGUIENTE</button>
+                <button className="btn btn-success" style={{ width: "125px", marginLeft: "15px" }} onClick={()=>{handleOnClick()}}>SIGUIENTE</button>
             </div>
         </div>
         <div style={{ height:"200px" }}>&nbsp;</div>
